@@ -1,4 +1,0 @@
-Software used to build project: Apache Netbeans IDE 
-Database used: MYSQL
-Connector Used : mysql jdbc connector
-Language used: Java
