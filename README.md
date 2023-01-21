@@ -1,1 +1,1 @@
-CGPA calculator version 1.0.0
+CGPA calculator version 2.0.0
