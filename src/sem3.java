@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -23,8 +24,9 @@ int value;
       
         initComponents();
       perc.setVisible(false);
-      
+       setExtendedState(JFrame.MAXIMIZED_BOTH);
       try{
+          
              Connection con=Database.connect();
             String sql="SELECT checkbox FROM tbl_main WHERE username='"+Login.username+"'";
             
@@ -159,6 +161,7 @@ try{
         dcp = new javax.swing.JTextField();
         ca = new javax.swing.JTextField();
         dbms = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
         esdm = new javax.swing.JTextField();
         dcpl = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JButton();
@@ -183,25 +186,26 @@ try{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
 
         perc.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         perc.setForeground(new java.awt.Color(255, 255, 255));
         perc.setText("%");
         jPanel1.add(perc);
-        perc.setBounds(893, 256, 50, 60);
+        perc.setBounds(1080, 290, 50, 60);
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText(" Grade");
         jPanel1.add(jLabel25);
-        jLabel25.setBounds(370, 90, 40, 16);
+        jLabel25.setBounds(390, 120, 40, 16);
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("  Point");
         jPanel1.add(jLabel26);
-        jLabel26.setBounds(430, 90, 40, 16);
+        jLabel26.setBounds(450, 120, 40, 16);
 
         dcp1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -219,7 +223,7 @@ try{
             }
         });
         jPanel1.add(dcp1);
-        dcp1.setBounds(370, 110, 40, 30);
+        dcp1.setBounds(390, 140, 40, 30);
 
         ca1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -237,7 +241,7 @@ try{
             }
         });
         jPanel1.add(ca1);
-        ca1.setBounds(370, 190, 40, 30);
+        ca1.setBounds(390, 250, 40, 30);
 
         esdm1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -255,7 +259,7 @@ try{
             }
         });
         jPanel1.add(esdm1);
-        esdm1.setBounds(370, 270, 40, 30);
+        esdm1.setBounds(390, 370, 40, 30);
 
         oopl1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -273,7 +277,7 @@ try{
             }
         });
         jPanel1.add(oopl1);
-        oopl1.setBounds(370, 350, 40, 30);
+        oopl1.setBounds(390, 490, 40, 30);
 
         dbmsl1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -291,7 +295,7 @@ try{
             }
         });
         jPanel1.add(dbmsl1);
-        dbmsl1.setBounds(370, 390, 40, 30);
+        dbmsl1.setBounds(390, 550, 40, 30);
 
         dcpl1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -309,7 +313,7 @@ try{
             }
         });
         jPanel1.add(dcpl1);
-        dcpl1.setBounds(370, 310, 40, 30);
+        dcpl1.setBounds(390, 430, 40, 30);
 
         dbms1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -327,7 +331,7 @@ try{
             }
         });
         jPanel1.add(dbms1);
-        dbms1.setBounds(370, 230, 40, 30);
+        dbms1.setBounds(390, 310, 40, 30);
 
         oop1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -345,18 +349,18 @@ try{
             }
         });
         jPanel1.add(oop1);
-        oop1.setBounds(370, 150, 40, 30);
+        oop1.setBounds(390, 190, 40, 30);
 
         progress.setMaximum(10);
         progress.setToolTipText("Your Progress");
         jPanel1.add(progress);
-        progress.setBounds(530, 480, 270, 10);
+        progress.setBounds(690, 580, 270, 10);
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("ARE YOU LET STUDENT ?");
         jPanel1.add(jLabel22);
-        jLabel22.setBounds(160, 460, 220, 16);
+        jLabel22.setBounds(220, 630, 220, 16);
 
         check.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         check.setForeground(new java.awt.Color(255, 255, 255));
@@ -372,7 +376,7 @@ try{
             }
         });
         jPanel1.add(check);
-        check.setBounds(380, 450, 100, 40);
+        check.setBounds(440, 620, 100, 40);
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/next.png"))); // NOI18N
         jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -381,7 +385,7 @@ try{
             }
         });
         jPanel1.add(jLabel21);
-        jLabel21.setBounds(1070, 0, 165, 50);
+        jLabel21.setBounds(1240, 10, 119, 63);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -390,7 +394,7 @@ try{
             }
         });
         jPanel1.add(jLabel16);
-        jLabel16.setBounds(0, 0, 60, 60);
+        jLabel16.setBounds(10, 10, 119, 63);
 
         sem1t2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -398,19 +402,19 @@ try{
             }
         });
         jPanel1.add(sem1t2);
-        sem1t2.setBounds(1010, 120, 100, 40);
+        sem1t2.setBounds(1080, 120, 100, 40);
 
         sem1t2l.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         sem1t2l.setForeground(new java.awt.Color(255, 255, 255));
         sem1t2l.setText("SEM2 GRADE POINTS:");
         jPanel1.add(sem1t2l);
-        sem1t2l.setBounds(820, 120, 180, 40);
+        sem1t2l.setBounds(890, 120, 180, 40);
 
         sem1tl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         sem1tl.setForeground(new java.awt.Color(255, 255, 255));
         sem1tl.setText("SEM1 GRADE POINTS:");
         jPanel1.add(sem1tl);
-        sem1tl.setBounds(483, 120, 177, 40);
+        sem1tl.setBounds(560, 120, 177, 40);
 
         sem1t.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -418,7 +422,7 @@ try{
             }
         });
         jPanel1.add(sem1t);
-        sem1t.setBounds(670, 120, 100, 40);
+        sem1t.setBounds(740, 120, 100, 40);
 
         oopl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,7 +430,7 @@ try{
             }
         });
         jPanel1.add(oopl);
-        oopl.setBounds(430, 350, 40, 30);
+        oopl.setBounds(450, 490, 40, 30);
 
         dbmsl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -434,55 +438,55 @@ try{
             }
         });
         jPanel1.add(dbmsl);
-        dbmsl.setBounds(430, 390, 40, 30);
+        dbmsl.setBounds(450, 550, 40, 30);
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Database Management System Lab :");
         jPanel1.add(jLabel20);
-        jLabel20.setBounds(70, 370, 300, 70);
+        jLabel20.setBounds(90, 530, 300, 70);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText(" Digital Computer Principles :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(135, 94, 230, 60);
+        jLabel1.setBounds(160, 120, 230, 60);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Object Oriented Programming through C++ :");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(5, 141, 360, 50);
+        jLabel2.setBounds(30, 180, 360, 50);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Computer Architecture :");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(175, 169, 190, 70);
+        jLabel3.setBounds(200, 230, 190, 70);
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Object Oriented Programming Lab :");
         jPanel1.add(jLabel19);
-        jLabel19.setBounds(80, 325, 290, 80);
+        jLabel19.setBounds(100, 460, 290, 80);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Database Management System :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(105, 216, 260, 60);
+        jLabel4.setBounds(130, 290, 260, 60);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("ES&DM :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(290, 240, 80, 90);
+        jLabel6.setBounds(310, 340, 80, 90);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Digital Computer Principles Lab :");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(105, 280, 270, 90);
+        jLabel8.setBounds(130, 400, 270, 90);
 
         oop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -490,7 +494,7 @@ try{
             }
         });
         jPanel1.add(oop);
-        oop.setBounds(430, 150, 40, 30);
+        oop.setBounds(450, 190, 40, 30);
 
         dcp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -498,7 +502,7 @@ try{
             }
         });
         jPanel1.add(dcp);
-        dcp.setBounds(430, 110, 40, 30);
+        dcp.setBounds(450, 140, 40, 30);
 
         ca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -506,7 +510,7 @@ try{
             }
         });
         jPanel1.add(ca);
-        ca.setBounds(430, 190, 40, 30);
+        ca.setBounds(450, 250, 40, 30);
 
         dbms.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -514,7 +518,13 @@ try{
             }
         });
         jPanel1.add(dbms);
-        dbms.setBounds(430, 230, 40, 30);
+        dbms.setBounds(450, 310, 40, 30);
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("SEMESTER 3");
+        jPanel1.add(jLabel28);
+        jLabel28.setBounds(560, 20, 280, 70);
 
         esdm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -522,7 +532,7 @@ try{
             }
         });
         jPanel1.add(esdm);
-        esdm.setBounds(430, 270, 40, 30);
+        esdm.setBounds(450, 370, 40, 30);
 
         dcpl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -530,7 +540,7 @@ try{
             }
         });
         jPanel1.add(dcpl);
-        dcpl.setBounds(430, 310, 40, 30);
+        dcpl.setBounds(450, 430, 40, 30);
 
         jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jToggleButton1.setText("CALCULATE");
@@ -541,84 +551,84 @@ try{
             }
         });
         jPanel1.add(jToggleButton1);
-        jToggleButton1.setBounds(560, 410, 210, 50);
+        jToggleButton1.setBounds(720, 510, 210, 50);
 
         Cgpa1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         Cgpa1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(Cgpa1);
-        Cgpa1.setBounds(770, 320, 110, 70);
+        Cgpa1.setBounds(960, 390, 110, 70);
 
         total.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         total.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(total);
-        total.setBounds(770, 180, 260, 70);
+        total.setBounds(960, 180, 260, 70);
 
         percentage1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         percentage1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(percentage1);
-        percentage1.setBounds(770, 240, 120, 90);
+        percentage1.setBounds(950, 270, 120, 90);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("TOTAL MARK :");
+        jLabel7.setText(" GRADE POINTS :");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(510, 200, 260, 30);
+        jLabel7.setBounds(660, 200, 300, 30);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(" CGPA :");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(640, 330, 140, 50);
+        jLabel5.setBounds(830, 400, 140, 50);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("  PERCENTAGE :");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(505, 250, 270, 70);
+        jLabel9.setBounds(690, 280, 270, 70);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM3NEW.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(0, 0, 1240, 510);
+        jLabel10.setBounds(0, 0, 1370, 710);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("                Programming in C :");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(130, 280, 240, 50);
+        jLabel11.setBounds(130, 320, 240, 50);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("                Programming in C :");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(130, 280, 240, 50);
+        jLabel12.setBounds(130, 320, 240, 50);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("      Engineering Graphics :");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(155, 320, 220, 50);
+        jLabel13.setBounds(160, 360, 220, 50);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("      Engineering Graphics :");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(155, 320, 220, 50);
+        jLabel14.setBounds(160, 360, 220, 50);
 
         jLabel15.setText("jLabel15");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(260, 360, 110, 80);
+        jLabel15.setBounds(260, 400, 110, 80);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText(" Workshop Practice :");
         jPanel1.add(jLabel17);
-        jLabel17.setBounds(200, 380, 170, 25);
+        jLabel17.setBounds(200, 420, 170, 25);
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText(" Workshop Practice :");
         jPanel1.add(jLabel18);
-        jLabel18.setBounds(200, 380, 170, 25);
+        jLabel18.setBounds(200, 420, 170, 25);
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -626,19 +636,19 @@ try{
             }
         });
         jPanel1.add(jTextField5);
-        jTextField5.setBounds(380, 470, 40, 30);
+        jTextField5.setBounds(380, 510, 40, 30);
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("SEMESTER 1 TOTAL :");
         jPanel1.add(jLabel23);
-        jLabel23.setBounds(440, 120, 220, 40);
+        jLabel23.setBounds(440, 160, 220, 40);
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("SEMESTER 1 TOTAL :");
         jPanel1.add(jLabel24);
-        jLabel24.setBounds(440, 120, 220, 40);
+        jLabel24.setBounds(440, 160, 220, 40);
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -650,11 +660,11 @@ try{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1236, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -1429,6 +1439,7 @@ try{
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

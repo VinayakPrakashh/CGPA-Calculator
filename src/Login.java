@@ -1,9 +1,9 @@
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -11,22 +11,26 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
- *id = 1
+ * id = 1
+ *
  * @author ACER
  */
 public class Login extends javax.swing.JFrame {
-int value;
-static String username;
+
+    int value;
+    static String username;
+
     /**
      * Creates new form dashboard
      */
     public Login() {
         initComponents();
-      load.setVisible(false);
-        
+   
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +41,8 @@ static String username;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        load = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         login1 = new javax.swing.JButton();
         pass = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
@@ -53,14 +58,19 @@ static String username;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1240, 518));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
 
-        load.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        load.setForeground(new java.awt.Color(242, 242, 242));
-        load.setText("LOADING..");
-        jPanel1.add(load);
-        load.setBounds(430, 120, 220, 50);
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel8.setText("LOGIN");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(610, 110, 160, 50);
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText(" Need to create a new Account?");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(600, 490, 180, 20);
 
         login1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         login1.setText("REGISTER");
@@ -70,13 +80,21 @@ static String username;
             }
         });
         jPanel1.add(login1);
-        login1.setBounds(610, 390, 130, 40);
+        login1.setBounds(620, 520, 130, 40);
 
         pass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        pass.setToolTipText("password");
+        pass.setActionCommand("<Not Set>");
+        pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passActionPerformed(evt);
+            }
+        });
         jPanel1.add(pass);
-        pass.setBounds(530, 300, 250, 40);
+        pass.setBounds(670, 290, 250, 40);
 
-        login.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        login.setBackground(new java.awt.Color(204, 204, 204));
+        login.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         login.setText("LOGIN");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,48 +102,50 @@ static String username;
             }
         });
         jPanel1.add(login);
-        login.setBounds(360, 390, 130, 40);
+        login.setBounds(590, 400, 190, 50);
 
         uname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        uname.setToolTipText("username");
         uname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unameActionPerformed(evt);
             }
         });
         jPanel1.add(uname);
-        uname.setBounds(530, 200, 250, 40);
+        uname.setBounds(670, 190, 250, 40);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(242, 242, 242));
         jLabel6.setText("PASSWORD :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(300, 290, 230, 50);
+        jLabel6.setBounds(400, 280, 230, 50);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setText("USERNAME :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(307, 190, 220, 50);
+        jLabel4.setBounds(410, 180, 220, 50);
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(" Connect Status");
+        jLabel5.setText(" Connection");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(1140, 90, 100, 14);
+        jLabel5.setBounds(1290, 70, 80, 10);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitled-2.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co.png"))); // NOI18N
+        jLabel3.setToolTipText("Check Connection Status");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(1150, 20, 70, 70);
+        jLabel3.setBounds(1300, 20, 50, 50);
 
         tmark.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         tmark.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,7 +157,7 @@ static String username;
         jPanel1.add(cgpa);
         cgpa.setBounds(490, 430, 160, 70);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/po2.png"))); // NOI18N
         jLabel2.setToolTipText("Turn Off");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -145,74 +165,66 @@ static String username;
             }
         });
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 20, 60, 60);
+        jLabel2.setBounds(20, 20, 50, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/new.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, -4, 1240, 520);
+        jLabel1.setBounds(0, -4, 1370, 710);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
-
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-            try{
-            Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-            
+        try {
+            Connection con = Database.connect();
+            String sql = "SELECT * FROM tbl_main";
+
             System.out.println(sql);
-            Statement stmt=con.createStatement();
+            Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-  JOptionPane.showMessageDialog(null, "Database Connected");
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Database Connected");
+            } else {
+
             }
-            else{
-                
-            }
-            }
-        catch(Exception e)
-        {
-            
+        } catch (Exception e) {
+
         }
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-         
-        try{
-              Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-            
+
+        try {
+            Connection con = Database.connect();
+            String sql = "SELECT * FROM tbl_main";
+
             System.out.println(sql);
-            Statement stmt=con.createStatement();
+            Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-           
-            if(rs.next())
-            {
-  JOptionPane.showMessageDialog(null, "Database Connected");
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Database Connected");
             }
-        }
-        catch(Exception e)
-        {
-             
+        } catch (Exception e) {
+
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
@@ -221,63 +233,65 @@ static String username;
     }//GEN-LAST:event_unameActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        
-        username=uname.getText();
-       String password=pass.getText();
-        
-       if(username.equals("")||password.equals("")){
-           JOptionPane.showMessageDialog(rootPane, "Fields cannot be empty");
-       }
-       else{
-           
-             try{
-              
-            Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main where username='"+username+"' and password ='"+password+"'";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-               
-  JOptionPane.showMessageDialog(null, "Login success");
 
-           
-                
-    choice p=new choice();
-        p.setVisible(true);
-          dispose();
-            
-           
+        username = uname.getText();
+        String password = pass.getText();
+
+   
+        if (username.equals("") || password.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Fields cannot be empty");
+        } else {
+
+            try {
+
+                Connection con = Database.connect();
+                String sql = "SELECT * FROM tbl_main where username='" + username + "' and password ='" + password + "'";
+
+                System.out.println(sql);
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(sql);
+
+                if (rs.next()) {
+
+                    JOptionPane.showMessageDialog(null, "Login success");
+
+                    choice p = new choice();
+                    p.setVisible(true);
+                    dispose();
+
+                } else {
+
+                    JOptionPane.showMessageDialog(null, "Login failed");
+                }
+            } catch (Exception e) {
+
             }
-            else{
-              
-                JOptionPane.showMessageDialog(null, "Login failed");
-            }
+
         }
-        catch(Exception e)
-        {
-             
-        }
-                load.setVisible(false);
-       }
-       
+
     }//GEN-LAST:event_loginActionPerformed
 
     private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
         // TODO add your handling code here:
-         registration p=new registration();
+        registration p = new registration();
         p.setVisible(true);
-          dispose(); 
+        dispose();
     }//GEN-LAST:event_login1ActionPerformed
+
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
- 
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -317,8 +331,9 @@ static String username;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel load;
     private javax.swing.JButton login;
     private javax.swing.JButton login1;
     private javax.swing.JPasswordField pass;

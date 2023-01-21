@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -23,7 +24,8 @@ int value;
     public choice() {
        
         initComponents();
-       user.setText(Login.username);
+             setExtendedState(JFrame.MAXIMIZED_BOTH);
+
          }
 
    
@@ -37,133 +39,88 @@ int value;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        tmark = new javax.swing.JLabel();
-        name_user = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
         user = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         cpga = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         sgpa = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         cgpa = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1240, 518));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
 
-        tmark.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        tmark.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tmark);
-        tmark.setBounds(950, 430, 120, 70);
-
-        name_user.setText("jLabel6");
-        jPanel1.add(name_user);
-        name_user.setBounds(800, 430, 37, 16);
+        logout.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        logout.setText("LOGOUT");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(logout);
+        logout.setBounds(30, 650, 80, 23);
 
         user.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         user.setForeground(new java.awt.Color(242, 242, 242));
+        user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/face.png"))); // NOI18N
         user.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 userMouseClicked(evt);
             }
         });
         jPanel1.add(user);
-        user.setBounds(1160, 450, 70, 30);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel4.setText("USER:");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(1110, 450, 50, 30);
+        user.setBounds(1290, 630, 50, 60);
 
         cpga.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        cpga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2.png"))); // NOI18N
+        cpga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CALCULATE.png"))); // NOI18N
         cpga.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cpgaMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cpga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cpga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(740, 200, 250, 200);
+        jPanel1.add(cpga);
+        cpga.setBounds(790, 250, 397, 180);
 
         sgpa.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        sgpa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1.png"))); // NOI18N
+        sgpa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SGPA.png"))); // NOI18N
         sgpa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sgpaMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sgpa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sgpa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(240, 200, 250, 200);
+        jPanel1.add(sgpa);
+        sgpa.setBounds(190, 250, 397, 180);
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(" Connect Status");
+        jLabel5.setText(" Connection");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(1140, 90, 100, 14);
+        jLabel5.setBounds(1290, 70, 80, 14);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitled-2.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(1150, 20, 70, 70);
+        jLabel3.setBounds(1300, 20, 50, 50);
 
         cgpa.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         cgpa.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(cgpa);
         cgpa.setBounds(490, 430, 160, 70);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/po2.png"))); // NOI18N
         jLabel2.setToolTipText("Turn Off");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -171,74 +128,25 @@ int value;
             }
         });
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 20, 60, 60);
+        jLabel2.setBounds(20, 20, 50, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/new.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/choice.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, -4, 1240, 520);
-
-        jMenuBar1.setBackground(new java.awt.Color(255, 0, 0));
-        jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jMenuBar1.setFont(new java.awt.Font("Sylfaen", 0, 12)); // NOI18N
-
-        jMenu2.setText("File");
-
-        jMenuItem2.setText("User Name");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem2);
-
-        jMenuItem1.setText("Connect Status");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem1);
-
-        jMenuItem3.setText("Logout");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem3);
-
-        jMenuItem4.setText("Quit");
-        jMenu2.add(jMenuItem4);
-
-        jMenuItem5.setText("Check for Updates");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setText("Version info");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem6);
-
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
+        jLabel1.setBounds(0, -4, 1370, 710);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -291,6 +199,20 @@ int value;
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
+ user p=new user();
+        p.setVisible(true);
+          
+    }//GEN-LAST:event_userMouseClicked
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+        Login.username="";
+        Login p=new Login();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_logoutActionPerformed
+
     private void sgpaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sgpaMouseClicked
         // TODO add your handling code here:
         cgpa_cal p=new cgpa_cal();
@@ -304,60 +226,6 @@ int value;
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_cpgaMouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userMouseClicked
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-             try{
-             Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main ";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-            
-        }
-        
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null,Login.username );
-            
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-         Login p=new Login();
-        p.setVisible(true);
-          dispose();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
-         JOptionPane.showMessageDialog(null, "Version 1.0.0");
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "You are already using the latest version");
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -401,22 +269,10 @@ int value;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel name_user;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel sgpa;
-    private javax.swing.JLabel tmark;
     private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
 }

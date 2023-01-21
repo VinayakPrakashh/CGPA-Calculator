@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -24,7 +25,7 @@ public class choice1 extends javax.swing.JFrame {
      */
     public choice1() {
         initComponents();
-        
+         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,16 +40,15 @@ public class choice1 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        user = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         sgpa = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         cpga = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         tmark = new javax.swing.JLabel();
         cgpa = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jPopupMenu1.setMaximumSize(new java.awt.Dimension(700, 700));
@@ -62,90 +62,79 @@ public class choice1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1240, 518));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
 
+        user.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        user.setForeground(new java.awt.Color(242, 242, 242));
+        user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/face.png"))); // NOI18N
+        user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userMouseClicked(evt);
+            }
+        });
+        jPanel1.add(user);
+        user.setBounds(1290, 630, 50, 60);
+
+        logout.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        logout.setText("LOGOUT");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(logout);
+        logout.setBounds(30, 650, 80, 23);
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton1.setText("  BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(-20, -11, 120, 50);
+
         sgpa.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        sgpa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/4.png"))); // NOI18N
+        sgpa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UPTO.png"))); // NOI18N
         sgpa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sgpaMouseClicked(evt);
             }
         });
-
-        jLabel8.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 30)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText(" I HAVE SGPA");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sgpa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sgpa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(24, 24, 24)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(34, Short.MAX_VALUE)))
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(240, 200, 250, 200);
+        jPanel1.add(sgpa);
+        sgpa.setBounds(190, 250, 397, 180);
 
         cpga.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cpga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/3.png"))); // NOI18N
+        cpga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM WISE.png"))); // NOI18N
         cpga.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cpgaMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(cpga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(cpga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(750, 200, 250, 200);
+        jPanel1.add(cpga);
+        cpga.setBounds(790, 260, 397, 180);
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(" Connect Status");
+        jLabel5.setText(" Connection");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(1140, 90, 100, 14);
+        jLabel5.setBounds(1290, 70, 70, 14);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitled-2.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(1150, 20, 70, 70);
+        jLabel3.setBounds(1300, 20, 50, 50);
 
         tmark.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         tmark.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,38 +146,25 @@ public class choice1 extends javax.swing.JFrame {
         jPanel1.add(cgpa);
         cgpa.setBounds(490, 430, 160, 70);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power.png"))); // NOI18N
-        jLabel2.setToolTipText("Turn Off");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 430, 60, 60);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/new.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/choice.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, -4, 1240, 520);
+        jLabel1.setBounds(0, -4, 1370, 710);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
@@ -235,7 +211,7 @@ public class choice1 extends javax.swing.JFrame {
 
     private void cpgaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cpgaMouseClicked
         // TODO add your handling code here:
-         cgpa_cal p=new cgpa_cal();
+         sgpa_sem p=new sgpa_sem();
         p.setVisible(true);
         dispose();
          
@@ -248,6 +224,27 @@ public class choice1 extends javax.swing.JFrame {
           dispose(); 
        
     }//GEN-LAST:event_sgpaMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        choice p=new choice();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+        Login.username="";
+        Login p=new Login();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_logoutActionPerformed
+
+    private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
+        user p=new user();
+        p.setVisible(true);
+
+    }//GEN-LAST:event_userMouseClicked
 
     /**
      * @param args the command line arguments
@@ -280,7 +277,7 @@ public class choice1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new choice().setVisible(true);
+                new choice1().setVisible(true);
             }
         });
     }
@@ -288,18 +285,17 @@ public class choice1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cgpa;
     private javax.swing.JLabel cpga;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel sgpa;
     private javax.swing.JLabel tmark;
+    private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
 }

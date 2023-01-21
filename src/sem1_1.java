@@ -1,9 +1,10 @@
 import java.sql.*;
 import java.sql.DriverManager;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
+
  * @author ACER
  */
 public class sem1_1 extends javax.swing.JFrame {
@@ -14,6 +15,7 @@ public class sem1_1 extends javax.swing.JFrame {
     public sem1_1() {
         initComponents();
       perc.setVisible(false);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -41,6 +43,7 @@ public class sem1_1 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         em1 = new javax.swing.JTextField();
@@ -62,25 +65,26 @@ public class sem1_1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
 
         perc.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         perc.setForeground(new java.awt.Color(255, 255, 255));
         perc.setText("%");
         jPanel1.add(perc);
-        perc.setBounds(893, 256, 50, 40);
+        perc.setBounds(1060, 290, 50, 40);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("  Point");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(440, 110, 40, 16);
+        jLabel15.setBounds(480, 200, 40, 16);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText(" Grade");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(380, 110, 40, 16);
+        jLabel14.setBounds(420, 200, 40, 16);
 
         cfS.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -98,7 +102,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cfS);
-        cfS.setBounds(380, 330, 40, 30);
+        cfS.setBounds(420, 570, 40, 30);
 
         ep1S.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -116,7 +120,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ep1S);
-        ep1S.setBounds(380, 210, 40, 30);
+        ep1S.setBounds(420, 360, 40, 30);
 
         ech1S.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -134,7 +138,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ech1S);
-        ech1S.setBounds(380, 250, 40, 30);
+        ech1S.setBounds(420, 430, 40, 30);
 
         em1S.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -142,18 +146,18 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(em1S);
-        em1S.setBounds(380, 170, 40, 30);
+        em1S.setBounds(420, 290, 40, 30);
 
         progress.setMaximum(10);
         progress.setToolTipText("Your Progress");
         jPanel1.add(progress);
-        progress.setBounds(530, 480, 270, 10);
+        progress.setBounds(700, 540, 270, 10);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("English for Communication 1 :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(126, 129, 239, 25);
+        jLabel1.setBounds(170, 220, 239, 25);
 
         hpeS.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -171,7 +175,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(hpeS);
-        hpeS.setBounds(380, 290, 40, 30);
+        hpeS.setBounds(420, 500, 40, 30);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -180,7 +184,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(0, 0, 60, 60);
+        jLabel11.setBounds(10, 10, 120, 63);
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/next.png"))); // NOI18N
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -189,37 +193,43 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(1070, 0, 165, 50);
+        jLabel13.setBounds(1240, 10, 119, 63);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("English for Mathematics 1 :");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(151, 175, 214, 16);
+        jLabel2.setBounds(190, 290, 214, 16);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Engineering Physics 1 :");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(186, 209, 179, 30);
+        jLabel3.setBounds(220, 360, 179, 30);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Engineering Chemistry 1 :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(164, 248, 201, 28);
+        jLabel4.setBounds(200, 430, 201, 28);
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("SEMESTER 1");
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(560, 20, 280, 70);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText(" Health & Physical Education :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(130, 280, 240, 50);
+        jLabel6.setBounds(170, 490, 240, 50);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Computing Fundamentals :");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(150, 320, 215, 50);
+        jLabel8.setBounds(190, 560, 215, 50);
 
         em1.setEditable(false);
         em1.setFocusable(false);
@@ -231,7 +241,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(em1);
-        em1.setBounds(440, 170, 40, 30);
+        em1.setBounds(480, 290, 40, 30);
 
         ec1S.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -242,7 +252,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ec1S);
-        ec1S.setBounds(380, 130, 40, 30);
+        ec1S.setBounds(420, 220, 40, 30);
 
         ec1.setEditable(false);
         ec1.setFocusable(false);
@@ -269,7 +279,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ec1);
-        ec1.setBounds(440, 130, 40, 30);
+        ec1.setBounds(480, 220, 40, 30);
 
         ep1.setEditable(false);
         ep1.setFocusable(false);
@@ -281,7 +291,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ep1);
-        ep1.setBounds(440, 210, 40, 30);
+        ep1.setBounds(480, 360, 40, 30);
 
         ech1.setEditable(false);
         ech1.setFocusable(false);
@@ -293,7 +303,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ech1);
-        ech1.setBounds(440, 250, 40, 30);
+        ech1.setBounds(480, 430, 40, 30);
 
         hpe.setEditable(false);
         hpe.setFocusable(false);
@@ -305,7 +315,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(hpe);
-        hpe.setBounds(440, 290, 40, 30);
+        hpe.setBounds(480, 500, 40, 30);
 
         cf.setEditable(false);
         cf.setFocusable(false);
@@ -317,7 +327,7 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cf);
-        cf.setBounds(440, 330, 40, 30);
+        cf.setBounds(480, 570, 40, 30);
 
         jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jToggleButton1.setText("CALCULATE");
@@ -328,44 +338,44 @@ public class sem1_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jToggleButton1);
-        jToggleButton1.setBounds(560, 410, 210, 50);
+        jToggleButton1.setBounds(730, 460, 210, 50);
 
         Sgpa.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         Sgpa.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(Sgpa);
-        Sgpa.setBounds(770, 300, 130, 90);
+        Sgpa.setBounds(940, 340, 130, 90);
 
         total.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         total.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(total);
-        total.setBounds(770, 170, 260, 50);
+        total.setBounds(930, 210, 260, 50);
 
         percentage1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         percentage1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(percentage1);
-        percentage1.setBounds(770, 240, 120, 70);
+        percentage1.setBounds(940, 280, 120, 70);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("GRADE POINTS :");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(490, 180, 280, 30);
+        jLabel7.setBounds(650, 220, 280, 30);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(" SGPA :");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(640, 320, 140, 50);
+        jLabel5.setBounds(810, 360, 140, 50);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("  PERCENTAGE :");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(505, 250, 270, 50);
+        jLabel9.setBounds(670, 290, 270, 50);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM1NEW.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(0, 0, 1240, 510);
+        jLabel10.setBounds(0, 0, 1370, 710);
 
         jLabel12.setText("jLabel12");
         jPanel1.add(jLabel12);
@@ -375,11 +385,11 @@ public class sem1_1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1236, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -459,20 +469,6 @@ public class sem1_1 extends javax.swing.JFrame {
         percentage1.setText(rounded2+"");
           String sgpA = Sgpa.getText();
         System.out.println(sgpA);
-    try{
-                Connection con=Database.connect();
-                String sql="UPDATE tblc SET cgpa=('"+sgpA+"') WHERE id=2";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
-
-            }
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-        
-       
         perc.setVisible(true);
         int i = (int) sgpa;
      
@@ -850,6 +846,7 @@ public class sem1_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

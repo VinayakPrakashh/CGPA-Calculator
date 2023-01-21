@@ -107,6 +107,7 @@ public class sem2 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -122,25 +123,26 @@ public class sem2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
 
         perc.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         perc.setForeground(new java.awt.Color(255, 255, 255));
         perc.setText("%");
         jPanel1.add(perc);
-        perc.setBounds(893, 256, 50, 60);
+        perc.setBounds(940, 280, 50, 60);
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText(" Grade");
         jPanel1.add(jLabel25);
-        jLabel25.setBounds(370, 90, 40, 16);
+        jLabel25.setBounds(370, 140, 40, 16);
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("  Point");
         jPanel1.add(jLabel26);
-        jLabel26.setBounds(430, 90, 40, 16);
+        jLabel26.setBounds(430, 140, 40, 16);
 
         ec2S.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -158,7 +160,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ec2S);
-        ec2S.setBounds(370, 110, 40, 30);
+        ec2S.setBounds(370, 160, 40, 30);
 
         em2S.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -182,7 +184,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(em2S);
-        em2S.setBounds(370, 150, 40, 30);
+        em2S.setBounds(370, 200, 40, 30);
 
         ep2S.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -203,7 +205,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ep2S);
-        ep2S.setBounds(370, 190, 40, 30);
+        ep2S.setBounds(370, 240, 40, 30);
 
         ech2S.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -211,7 +213,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ech2S);
-        ech2S.setBounds(370, 230, 40, 30);
+        ech2S.setBounds(370, 280, 40, 30);
 
         pcS.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -232,7 +234,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(pcS);
-        pcS.setBounds(370, 270, 40, 30);
+        pcS.setBounds(370, 320, 40, 30);
 
         egS.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -258,7 +260,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(egS);
-        egS.setBounds(370, 310, 40, 30);
+        egS.setBounds(370, 360, 40, 30);
 
         wpS.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -279,7 +281,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(wpS);
-        wpS.setBounds(370, 350, 40, 30);
+        wpS.setBounds(370, 400, 40, 30);
 
         esl2S.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -287,7 +289,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(esl2S);
-        esl2S.setBounds(370, 390, 40, 30);
+        esl2S.setBounds(370, 440, 40, 30);
 
         pclSE.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -308,7 +310,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(pclSE);
-        pclSE.setBounds(370, 430, 40, 30);
+        pclSE.setBounds(370, 480, 40, 30);
 
         lsS.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -329,12 +331,12 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lsS);
-        lsS.setBounds(370, 470, 40, 30);
+        lsS.setBounds(370, 520, 40, 30);
 
         progress.setMaximum(10);
         progress.setToolTipText("Your Progress");
         jPanel1.add(progress);
-        progress.setBounds(530, 480, 270, 10);
+        progress.setBounds(580, 530, 270, 10);
 
         sem1totnew.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         sem1totnew.setForeground(new java.awt.Color(255, 255, 255));
@@ -348,7 +350,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel24);
-        jLabel24.setBounds(1070, 0, 165, 50);
+        jLabel24.setBounds(1240, 10, 119, 63);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -357,7 +359,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel23);
-        jLabel23.setBounds(0, 0, 60, 60);
+        jLabel23.setBounds(10, 10, 120, 63);
 
         sem1t.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -365,13 +367,13 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sem1t);
-        sem1t.setBounds(770, 120, 100, 40);
+        sem1t.setBounds(780, 150, 100, 40);
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("SEM1 GRADE POINTS :");
         jPanel1.add(jLabel22);
-        jLabel22.setBounds(570, 120, 190, 40);
+        jLabel22.setBounds(590, 150, 190, 40);
 
         ls.setEditable(false);
         ls.setFocusable(false);
@@ -388,7 +390,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ls);
-        ls.setBounds(430, 470, 40, 30);
+        ls.setBounds(430, 520, 40, 30);
 
         pcl.setEditable(false);
         pcl.setFocusable(false);
@@ -405,7 +407,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(pcl);
-        pcl.setBounds(430, 430, 40, 30);
+        pcl.setBounds(430, 480, 40, 30);
 
         wp.setEditable(false);
         wp.setFocusable(false);
@@ -422,7 +424,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(wp);
-        wp.setBounds(430, 350, 40, 30);
+        wp.setBounds(430, 400, 40, 30);
 
         esl2.setEditable(false);
         esl2.setFocusable(false);
@@ -439,67 +441,67 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(esl2);
-        esl2.setBounds(430, 390, 40, 30);
+        esl2.setBounds(430, 440, 40, 30);
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Life Skill :");
         jPanel1.add(jLabel21);
-        jLabel21.setBounds(290, 465, 80, 40);
+        jLabel21.setBounds(290, 510, 80, 40);
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Programming in C lab :");
         jPanel1.add(jLabel16);
-        jLabel16.setBounds(180, 415, 190, 60);
+        jLabel16.setBounds(180, 460, 190, 60);
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Engineering Science Lab II :");
         jPanel1.add(jLabel20);
-        jLabel20.setBounds(150, 370, 220, 70);
+        jLabel20.setBounds(150, 420, 220, 70);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("English for Communication II :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(126, 94, 239, 60);
+        jLabel1.setBounds(130, 140, 239, 60);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("English for Mathematics II :");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(151, 141, 214, 50);
+        jLabel2.setBounds(150, 190, 214, 50);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Engineering Physics II :");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(186, 169, 179, 70);
+        jLabel3.setBounds(190, 220, 179, 70);
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText(" Workshop Practice :");
         jPanel1.add(jLabel19);
-        jLabel19.setBounds(200, 325, 170, 80);
+        jLabel19.setBounds(200, 380, 170, 70);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Engineering Chemistry II :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(164, 216, 201, 60);
+        jLabel4.setBounds(170, 260, 201, 60);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("                Programming in C :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(130, 240, 240, 90);
+        jLabel6.setBounds(130, 290, 240, 90);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("      Engineering Graphics :");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(155, 280, 220, 90);
+        jLabel8.setBounds(160, 330, 220, 90);
 
         em2.setEditable(false);
         em2.setFocusable(false);
@@ -516,7 +518,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(em2);
-        em2.setBounds(430, 150, 40, 30);
+        em2.setBounds(430, 200, 40, 30);
 
         ec2.setEditable(false);
         ec2.setFocusable(false);
@@ -533,7 +535,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ec2);
-        ec2.setBounds(430, 110, 40, 30);
+        ec2.setBounds(430, 160, 40, 30);
 
         ep2.setEditable(false);
         ep2.setFocusable(false);
@@ -550,7 +552,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ep2);
-        ep2.setBounds(430, 190, 40, 30);
+        ep2.setBounds(430, 240, 40, 30);
 
         ech2.setEditable(false);
         ech2.setFocusable(false);
@@ -567,7 +569,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ech2);
-        ech2.setBounds(430, 230, 40, 30);
+        ech2.setBounds(430, 280, 40, 30);
 
         pc.setEditable(false);
         pc.setFocusable(false);
@@ -584,7 +586,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(pc);
-        pc.setBounds(430, 270, 40, 30);
+        pc.setBounds(430, 320, 40, 30);
 
         eg.setEditable(false);
         eg.setFocusable(false);
@@ -606,7 +608,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(eg);
-        eg.setBounds(430, 310, 40, 30);
+        eg.setBounds(430, 360, 40, 30);
 
         jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jToggleButton1.setText("CALCULATE");
@@ -617,84 +619,90 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jToggleButton1);
-        jToggleButton1.setBounds(560, 410, 210, 50);
+        jToggleButton1.setBounds(610, 460, 210, 50);
 
         Cgpa.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         Cgpa.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(Cgpa);
-        Cgpa.setBounds(770, 320, 390, 70);
+        Cgpa.setBounds(820, 350, 390, 70);
 
         total.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         total.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(total);
-        total.setBounds(770, 180, 260, 70);
+        total.setBounds(810, 200, 260, 70);
 
         percentage1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         percentage1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(percentage1);
-        percentage1.setBounds(770, 240, 120, 90);
+        percentage1.setBounds(810, 270, 120, 90);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("GRADE POINTS :");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(490, 200, 280, 30);
+        jLabel7.setBounds(530, 220, 280, 30);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(" CGPA :");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(640, 330, 140, 50);
+        jLabel5.setBounds(690, 360, 140, 50);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("  PERCENTAGE :");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(505, 250, 270, 70);
+        jLabel9.setBounds(550, 280, 270, 70);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM2NEW.png"))); // NOI18N
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("SEMESTER 2");
+        jPanel1.add(jLabel27);
+        jLabel27.setBounds(560, 20, 280, 70);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(0, 0, 1240, 510);
+        jLabel10.setBounds(0, 0, 1370, 710);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("                Programming in C :");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(130, 280, 240, 50);
+        jLabel11.setBounds(130, 330, 240, 50);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("                Programming in C :");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(130, 280, 240, 50);
+        jLabel12.setBounds(130, 330, 240, 50);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("      Engineering Graphics :");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(155, 320, 220, 50);
+        jLabel13.setBounds(160, 370, 220, 50);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("      Engineering Graphics :");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(155, 320, 220, 50);
+        jLabel14.setBounds(160, 370, 220, 50);
 
         jLabel15.setText("jLabel15");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(260, 360, 110, 80);
+        jLabel15.setBounds(260, 410, 110, 80);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText(" Workshop Practice :");
         jPanel1.add(jLabel17);
-        jLabel17.setBounds(200, 380, 170, 25);
+        jLabel17.setBounds(200, 430, 170, 25);
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText(" Workshop Practice :");
         jPanel1.add(jLabel18);
-        jLabel18.setBounds(200, 380, 170, 25);
+        jLabel18.setBounds(200, 430, 170, 25);
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -702,7 +710,7 @@ public class sem2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField5);
-        jTextField5.setBounds(380, 470, 40, 30);
+        jTextField5.setBounds(380, 520, 40, 30);
 
         ec3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -721,11 +729,11 @@ public class sem2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1236, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -1527,6 +1535,7 @@ public class sem2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

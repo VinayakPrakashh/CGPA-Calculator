@@ -1,7 +1,7 @@
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -9,18 +9,19 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author ACER
  */
 public class sem6_1 extends javax.swing.JFrame {
+
     /**
      * Creates new form sem1
      */
     public sem6_1() {
         initComponents();
         perc.setVisible(false);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -61,6 +62,7 @@ public class sem6_1 extends javax.swing.JFrame {
         sdp = new javax.swing.JTextField();
         sdpl = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
         Sgpa = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
         percentage1 = new javax.swing.JLabel();
@@ -68,26 +70,16 @@ public class sem6_1 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setMinimumSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
 
         percentage2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         percentage2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(percentage2);
-        percentage2.setBounds(770, 280, 120, 50);
+        percentage2.setBounds(890, 300, 120, 50);
 
         st1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -105,7 +97,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(st1);
-        st1.setBounds(370, 350, 40, 30);
+        st1.setBounds(410, 590, 40, 30);
 
         st.setEditable(false);
         st.setFocusable(false);
@@ -117,25 +109,25 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(st);
-        st.setBounds(430, 350, 40, 30);
+        st.setBounds(470, 590, 40, 30);
 
         perc.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         perc.setForeground(new java.awt.Color(255, 255, 255));
         perc.setText("%");
         jPanel1.add(perc);
-        perc.setBounds(890, 270, 50, 70);
+        perc.setBounds(1010, 290, 50, 70);
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText(" Grade");
         jPanel1.add(jLabel22);
-        jLabel22.setBounds(370, 90, 40, 16);
+        jLabel22.setBounds(410, 200, 40, 16);
 
         jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("  Point");
         jPanel1.add(jLabel29);
-        jLabel29.setBounds(430, 90, 40, 16);
+        jLabel29.setBounds(470, 200, 40, 16);
 
         mc1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -153,7 +145,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(mc1);
-        mc1.setBounds(370, 110, 40, 30);
+        mc1.setBounds(410, 220, 40, 30);
 
         mcl1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -171,7 +163,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(mcl1);
-        mcl1.setBounds(370, 230, 40, 30);
+        mcl1.setBounds(410, 400, 40, 30);
 
         cn1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -189,7 +181,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cn1);
-        cn1.setBounds(370, 150, 40, 30);
+        cn1.setBounds(410, 280, 40, 30);
 
         ps1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -207,7 +199,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ps1);
-        ps1.setBounds(370, 310, 40, 30);
+        ps1.setBounds(410, 530, 40, 30);
 
         sdpl1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -225,7 +217,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sdpl1);
-        sdpl1.setBounds(370, 270, 40, 30);
+        sdpl1.setBounds(410, 460, 40, 30);
 
         sdp1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -243,12 +235,12 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sdp1);
-        sdp1.setBounds(370, 190, 40, 30);
+        sdp1.setBounds(410, 340, 40, 30);
 
         progress.setMaximum(10);
         progress.setToolTipText("Your Progress");
         jPanel1.add(progress);
-        progress.setBounds(530, 480, 270, 10);
+        progress.setBounds(640, 560, 270, 10);
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -257,7 +249,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel21);
-        jLabel21.setBounds(0, 0, 60, 60);
+        jLabel21.setBounds(10, 10, 120, 63);
 
         mcl.setEditable(false);
         mcl.setFocusable(false);
@@ -269,13 +261,13 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(mcl);
-        mcl.setBounds(430, 230, 40, 30);
+        mcl.setBounds(470, 400, 40, 30);
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Microcontroller Lab :");
         jPanel1.add(jLabel23);
-        jLabel23.setBounds(200, 220, 180, 50);
+        jLabel23.setBounds(240, 390, 180, 50);
 
         ps.setEditable(false);
         ps.setFocusable(false);
@@ -287,43 +279,43 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ps);
-        ps.setBounds(430, 310, 40, 30);
+        ps.setBounds(470, 530, 40, 30);
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Software Testing :");
         jPanel1.add(jLabel20);
-        jLabel20.setBounds(220, 320, 150, 80);
+        jLabel20.setBounds(260, 560, 150, 80);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Microcontrollers :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(225, 94, 140, 60);
+        jLabel1.setBounds(260, 200, 140, 60);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Computer Networks :");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(195, 141, 180, 50);
+        jLabel2.setBounds(230, 270, 180, 50);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Smart Device Programming :");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(135, 169, 240, 70);
+        jLabel3.setBounds(170, 320, 240, 70);
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Project & Seminar :");
         jPanel1.add(jLabel19);
-        jLabel19.setBounds(210, 290, 160, 70);
+        jLabel19.setBounds(250, 510, 160, 70);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Smart Device Programming Lab :");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(100, 240, 280, 90);
+        jLabel8.setBounds(140, 430, 280, 90);
 
         cn.setEditable(false);
         cn.setFocusable(false);
@@ -335,7 +327,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cn);
-        cn.setBounds(430, 150, 40, 30);
+        cn.setBounds(470, 280, 40, 30);
 
         mc.setEditable(false);
         mc.setRequestFocusEnabled(false);
@@ -346,7 +338,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(mc);
-        mc.setBounds(430, 110, 40, 30);
+        mc.setBounds(470, 220, 40, 30);
 
         sdp.setEditable(false);
         sdp.setFocusable(false);
@@ -358,7 +350,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sdp);
-        sdp.setBounds(430, 190, 40, 30);
+        sdp.setBounds(470, 340, 40, 30);
 
         sdpl.setEditable(false);
         sdpl.setFocusable(false);
@@ -370,7 +362,7 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sdpl);
-        sdpl.setBounds(430, 270, 40, 30);
+        sdpl.setBounds(470, 460, 40, 30);
 
         jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jToggleButton1.setText("CALCULATE");
@@ -381,17 +373,23 @@ public class sem6_1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jToggleButton1);
-        jToggleButton1.setBounds(560, 410, 210, 50);
+        jToggleButton1.setBounds(670, 490, 210, 50);
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("SEMESTER 6");
+        jPanel1.add(jLabel31);
+        jLabel31.setBounds(560, 20, 280, 70);
 
         Sgpa.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         Sgpa.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(Sgpa);
-        Sgpa.setBounds(770, 340, 390, 50);
+        Sgpa.setBounds(890, 390, 390, 50);
 
         total.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         total.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(total);
-        total.setBounds(770, 210, 260, 70);
+        total.setBounds(880, 180, 260, 70);
 
         percentage1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         percentage1.setForeground(new java.awt.Color(255, 255, 255));
@@ -402,97 +400,33 @@ public class sem6_1 extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("GRADE POINTS :");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(487, 230, 280, 30);
+        jLabel7.setBounds(600, 200, 280, 30);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(" SGPA :");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(640, 340, 140, 50);
+        jLabel5.setBounds(760, 390, 140, 50);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("  PERCENTAGE :");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(500, 270, 270, 70);
+        jLabel9.setBounds(620, 290, 270, 70);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM6NEW.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(0, 0, 1240, 510);
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("                Programming in C :");
-        jPanel1.add(jLabel11);
-        jLabel11.setBounds(130, 280, 240, 50);
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("                Programming in C :");
-        jPanel1.add(jLabel12);
-        jLabel12.setBounds(130, 280, 240, 50);
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("      Engineering Graphics :");
-        jPanel1.add(jLabel13);
-        jLabel13.setBounds(155, 320, 220, 50);
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("      Engineering Graphics :");
-        jPanel1.add(jLabel14);
-        jLabel14.setBounds(155, 320, 220, 50);
-
-        jLabel15.setText("jLabel15");
-        jPanel1.add(jLabel15);
-        jLabel15.setBounds(260, 360, 110, 80);
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText(" Workshop Practice :");
-        jPanel1.add(jLabel17);
-        jLabel17.setBounds(200, 380, 170, 25);
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText(" Workshop Practice :");
-        jPanel1.add(jLabel18);
-        jLabel18.setBounds(200, 380, 170, 25);
-
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField5);
-        jTextField5.setBounds(380, 470, 40, 30);
-
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("  Project & Seminar :");
-        jPanel1.add(jLabel24);
-        jLabel24.setBounds(205, 50, 170, 60);
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("SEMESTER 1 TOTAL :");
-        jPanel1.add(jLabel26);
-        jLabel26.setBounds(430, 120, 220, 40);
-
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SEM6NEW.png"))); // NOI18N
-        jPanel1.add(jLabel16);
-        jLabel16.setBounds(0, 0, 1240, 510);
+        jLabel10.setBounds(0, 0, 1370, 710);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1236, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
         );
 
         pack();
@@ -516,90 +450,73 @@ public class sem6_1 extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-         if(mc1.getText().isEmpty()||cn1.getText().isEmpty()||sdp1.getText().isEmpty()||mcl1.getText().isEmpty()||sdpl1.getText().isEmpty()||ps1.getText().isEmpty()||st1.getText().isEmpty()){
+        if (mc1.getText().isEmpty() || cn1.getText().isEmpty() || sdp1.getText().isEmpty() || mcl1.getText().isEmpty() || sdpl1.getText().isEmpty() || ps1.getText().isEmpty() || st1.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Fill Grades correctly");
-      }
-      else{
-        
+        } else {
+
             String mcH, cnH, sdpH, sdplH, mclH, stH, psH;
 
-       float totalmark;
-       double percentage;
-        float sgpa;
- 
-        
-        mcH = mc.getText();
-       cnH = cn.getText();
-        sdpH = sdp.getText();
-    
-     
+            float totalmark;
+            double percentage;
+            float sgpa;
 
-      
-        sdplH = sdpl.getText();
-    psH = ps.getText();
-    
-    stH = st.getText();
-        mclH = mcl.getText();
-    
-        
-        float mcgrade =Float.parseFloat(mcH);
-        float cngrade = Float.parseFloat(cnH);
-        float sdpgrade = Float.parseFloat(sdpH);
-    
-      
-     
-      float sdplgrade = Float.parseFloat(sdplH);
-        float psgrade = Float.parseFloat(psH);
-        float stgrade = Float.parseFloat(stH);
-        float mclgrade = Float.parseFloat(mclH);
-      
-     
-        totalmark = ((mcgrade*5) + (cngrade*4) + (sdpgrade*5) + (sdplgrade*3) + (psgrade*10) + (stgrade*5) + (mclgrade*3));
-       
-        sgpa = (((mcgrade*5) + (cngrade*4) + (sdpgrade*5) + (sdplgrade*3) + (psgrade*10) + (stgrade*5) + (mclgrade*3)) / 35);
-         percentage = (sgpa*9.5);
-  
- 
-  double rounded = Math.round(sgpa*100)/100.0;
-   
-         double rounded2 = Math.round(percentage*100)/100.0;
-        Sgpa.setText(rounded+"");
- 
-        total.setText(totalmark+"");
-        percentage2.setText(rounded2+"");
-           
-             perc.setVisible(true);
+            mcH = mc.getText();
+            cnH = cn.getText();
+            sdpH = sdp.getText();
+
+            sdplH = sdpl.getText();
+            psH = ps.getText();
+
+            stH = st.getText();
+            mclH = mcl.getText();
+
+            float mcgrade = Float.parseFloat(mcH);
+            float cngrade = Float.parseFloat(cnH);
+            float sdpgrade = Float.parseFloat(sdpH);
+
+            float sdplgrade = Float.parseFloat(sdplH);
+            float psgrade = Float.parseFloat(psH);
+            float stgrade = Float.parseFloat(stH);
+            float mclgrade = Float.parseFloat(mclH);
+
+            totalmark = ((mcgrade * 5) + (cngrade * 4) + (sdpgrade * 5) + (sdplgrade * 3) + (psgrade * 10) + (stgrade * 5) + (mclgrade * 3));
+
+            sgpa = (((mcgrade * 5) + (cngrade * 4) + (sdpgrade * 5) + (sdplgrade * 3) + (psgrade * 10) + (stgrade * 5) + (mclgrade * 3)) / 35);
+            percentage = (sgpa * 9.5);
+
+            double rounded = Math.round(sgpa * 100) / 100.0;
+
+            double rounded2 = Math.round(percentage * 100) / 100.0;
+            Sgpa.setText(rounded + "");
+
+            total.setText(totalmark + "");
+            percentage2.setText(rounded2 + "");
+
+            perc.setVisible(true);
             int j = (int) sgpa;
-     
-   String sgpA = Sgpa.getText();
-        System.out.println(sgpA);
-        progress.setValue(j);
-        try{
-                            Connection con=Database.connect();
 
-                String sql="UPDATE tbl_main SET sem2=('"+sgpA+"') WHERE username='"+Login.username+"'";
+            String sgpA = Sgpa.getText();
+            System.out.println(sgpA);
+            progress.setValue(j);
+            try {
+                Connection con = Database.connect();
+
+                String sql = "UPDATE tbl_main SET sem2=('" + sgpA + "') WHERE username='" + Login.username + "'";
                 System.out.println(sql);
-                Statement stmt=con.createStatement();
+                Statement stmt = con.createStatement();
                 int rs = stmt.executeUpdate(sql);
 
-            }
-            catch(Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("error" + e);
             }
-        
-            
-    }
-         
+
+        }
+
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void psActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_psActionPerformed
         // TODO add your handlig code here:
     }//GEN-LAST:event_psActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void mclActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mclActionPerformed
         // TODO add your handling code here:
@@ -607,9 +524,9 @@ public class sem6_1 extends javax.swing.JFrame {
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
         // TODO add your handling code here:
-      sgpa_sem p=new sgpa_sem();
+        sgpa_sem p = new sgpa_sem();
         p.setVisible(true);
-          dispose();
+        dispose();
     }//GEN-LAST:event_jLabel21MouseClicked
 
     private void mc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mc1ActionPerformed
@@ -638,260 +555,223 @@ public class sem6_1 extends javax.swing.JFrame {
 
     private void mc1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mc1FocusLost
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_mc1FocusLost
 
     private void cn1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cn1FocusLost
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_cn1FocusLost
 
     private void sdp1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sdp1FocusLost
         // TODO add your handling code here:
-    
+
     }//GEN-LAST:event_sdp1FocusLost
 
     private void mcl1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mcl1FocusLost
         // TODO add your handling code here:
-   
+
     }//GEN-LAST:event_mcl1FocusLost
 
     private void sdpl1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sdpl1FocusLost
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_sdpl1FocusLost
 
     private void ps1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ps1FocusLost
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_ps1FocusLost
 
     private void mc1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mc1KeyReleased
         // TODO add your handling code here:
-                                                   String i;
-        i=mc1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           mc.setText("10");
+        String i;
+        i = mc1.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            mc.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            mc.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            mc.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            mc.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            mc.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            mc.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            mc.setText("0");
+        } else {
+
         }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           mc.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           mc.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           mc.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           mc.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           mc.setText("5");
-        }
-                           else if("F".equals(i)||"f".equals(i)){
-          
-           mc.setText("0");
-        }else{
-                                    
-                                    
-                               }
-      
+
     }//GEN-LAST:event_mc1KeyReleased
 
     private void cn1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cn1KeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=cn1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           cn.setText("10");
+        String i;
+        i = cn1.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            cn.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            cn.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            cn.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            cn.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            cn.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            cn.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            cn.setText("0");
+        } else {
+
         }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           cn.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           cn.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           cn.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           cn.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           cn.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           cn.setText("0");
-        }else{
-                                    
-                               }
     }//GEN-LAST:event_cn1KeyReleased
 
     private void sdp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sdp1KeyReleased
         // TODO add your handling code here:
-                                                    String i;
-        i=sdp1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           sdp.setText("10");
+        String i;
+        i = sdp1.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            sdp.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            sdp.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            sdp.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            sdp.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            sdp.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            sdp.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            sdp.setText("0");
+        } else {
+
         }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           sdp.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           sdp.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           sdp.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           sdp.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           sdp.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           sdp.setText("0");
-        }else{
-                                    
-                               }
 
     }//GEN-LAST:event_sdp1KeyReleased
 
     private void mcl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mcl1KeyReleased
         // TODO add your handling code here:
-                                                     String i;
-        i=mcl1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           mcl.setText("10");
+        String i;
+        i = mcl1.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            mcl.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            mcl.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            mcl.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            mcl.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            mcl.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            mcl.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            mcl.setText("0");
+        } else {
+
         }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           mcl.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           mcl.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           mcl.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           mcl.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           mcl.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           mcl.setText("0");
-        }else{
-                                    
-                               }
-    
+
     }//GEN-LAST:event_mcl1KeyReleased
 
     private void sdpl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sdpl1KeyReleased
         // TODO add your handling code here:
-                                                   String i;
-        i=sdpl1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           sdpl.setText("10");
+        String i;
+        i = sdpl1.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            sdpl.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            sdpl.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            sdpl.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            sdpl.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            sdpl.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            sdpl.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            sdpl.setText("0");
+        } else {
+
         }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           sdpl.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           sdpl.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           sdpl.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           sdpl.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           sdpl.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           sdpl.setText("0");
-        }else{
-                                    
-                               }
 
     }//GEN-LAST:event_sdpl1KeyReleased
 
     private void ps1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ps1KeyReleased
         // TODO add your handling code here:
-                                                  String i;
-        i=ps1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           ps.setText("10");
+        String i;
+        i = ps1.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            ps.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            ps.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            ps.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            ps.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            ps.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            ps.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            ps.setText("0");
+        } else {
+
         }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           ps.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           ps.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           ps.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           ps.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           ps.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ps.setText("0");
-        }else{
-                                    
-                               }
-    
+
     }//GEN-LAST:event_ps1KeyReleased
 
     private void st1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_st1FocusLost
@@ -904,40 +784,34 @@ public class sem6_1 extends javax.swing.JFrame {
 
     private void st1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_st1KeyReleased
         // TODO add your handling code here:
-                                                String i;
-        i=st1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           st.setText("10");
+        String i;
+        i = st1.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            st.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            st.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            st.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            st.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            st.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            st.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            st.setText("0");
+        } else {
+
         }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           st.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           st.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           st.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           st.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           st.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           st.setText("0");
-        }else{
-                                    
-                               }
-   
+
     }//GEN-LAST:event_st1KeyReleased
 
     private void stActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stActionPerformed
@@ -985,30 +859,20 @@ public class sem6_1 extends javax.swing.JFrame {
     private javax.swing.JTextField cn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JButton jToggleButton1;
     private javax.swing.JTextField mc;
     private javax.swing.JTextField mc1;

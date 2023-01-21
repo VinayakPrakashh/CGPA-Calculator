@@ -1,9 +1,8 @@
 
-
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -11,22 +10,24 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
- *id = 1
+ * id = 1
+ *
  * @author ACER
  */
 public class registration extends javax.swing.JFrame {
-int value;
+
+    int value;
 
     /**
      * Creates new form dashboard
      */
     public registration() {
         initComponents();
-      
-        
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,6 +38,8 @@ int value;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         cpass = new javax.swing.JPasswordField();
         register1 = new javax.swing.JButton();
@@ -55,18 +58,34 @@ int value;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1240, 518));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText(" Already Registered?");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(610, 530, 120, 16);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel9.setText("REGISTER");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(600, 110, 170, 50);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel8.setText("CONFIRM PASSWORD :");
+        jLabel8.setText("CONFIRM :");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(220, 310, 400, 50);
+        jLabel8.setBounds(450, 380, 190, 50);
 
         cpass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpassActionPerformed(evt);
+            }
+        });
         jPanel1.add(cpass);
-        cpass.setBounds(620, 320, 250, 40);
+        cpass.setBounds(650, 390, 250, 40);
 
         register1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         register1.setText("LOGIN");
@@ -76,13 +95,13 @@ int value;
             }
         });
         jPanel1.add(register1);
-        register1.setBounds(680, 390, 130, 40);
+        register1.setBounds(600, 550, 130, 40);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(242, 242, 242));
         jLabel7.setText("NAME :");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(480, 100, 130, 50);
+        jLabel7.setBounds(510, 170, 130, 50);
 
         name.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         name.addActionListener(new java.awt.event.ActionListener() {
@@ -91,13 +110,14 @@ int value;
             }
         });
         jPanel1.add(name);
-        name.setBounds(620, 110, 250, 40);
+        name.setBounds(650, 180, 250, 40);
 
         pass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPanel1.add(pass);
-        pass.setBounds(620, 250, 250, 40);
+        pass.setBounds(650, 320, 250, 40);
 
-        register.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        register.setBackground(new java.awt.Color(204, 204, 204));
+        register.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         register.setText("REGISTER");
         register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +125,7 @@ int value;
             }
         });
         jPanel1.add(register);
-        register.setBounds(400, 390, 130, 40);
+        register.setBounds(580, 450, 170, 50);
 
         uname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         uname.addActionListener(new java.awt.event.ActionListener() {
@@ -114,46 +134,46 @@ int value;
             }
         });
         jPanel1.add(uname);
-        uname.setBounds(620, 180, 250, 40);
+        uname.setBounds(650, 250, 250, 40);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel6.setText("PASSWORD :");
+        jLabel6.setText(" PASSWORD :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(390, 240, 230, 50);
+        jLabel6.setBounds(400, 310, 250, 50);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel4.setText("USERNAME :");
+        jLabel4.setText(" USERNAME :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(400, 170, 220, 50);
+        jLabel4.setBounds(410, 240, 230, 50);
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(" Connect Status");
+        jLabel5.setText(" Connection");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(1140, 90, 100, 14);
+        jLabel5.setBounds(1290, 70, 70, 14);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitled-2.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(1150, 20, 70, 70);
+        jLabel3.setBounds(1300, 20, 50, 50);
 
         tmark.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         tmark.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(tmark);
         tmark.setBounds(950, 430, 120, 70);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/po2.png"))); // NOI18N
         jLabel2.setToolTipText("Turn Off");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -161,21 +181,25 @@ int value;
             }
         });
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 20, 60, 60);
+        jLabel2.setBounds(20, 20, 50, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/new.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, -4, 1240, 520);
+        jLabel1.setBounds(0, -4, 1370, 710);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -188,46 +212,39 @@ int value;
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-            try{
-             Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-            
+        try {
+            Connection con = Database.connect();
+            String sql = "SELECT * FROM tbl_main";
+
             System.out.println(sql);
-            Statement stmt=con.createStatement();
+            Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-   JOptionPane.showMessageDialog(null, "Database Connected");
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Database Connected");
+            } else {
+
             }
-            else{
-                
-            }
-            }
-        catch(Exception e)
-        {
-           
+        } catch (Exception e) {
+
         }
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-         try{
-             Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-            
+        try {
+            Connection con = Database.connect();
+            String sql = "SELECT * FROM tbl_main";
+
             System.out.println(sql);
-            Statement stmt=con.createStatement();
+            Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-  JOptionPane.showMessageDialog(null, "Database Connected");
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Database Connected");
             }
-        }
-        catch(Exception e)
-        {
-             JOptionPane.showMessageDialog(null, "Database Not Connected");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Database Not Connected");
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
@@ -236,56 +253,77 @@ int value;
     }//GEN-LAST:event_unameActionPerformed
 
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
-       String name1=name.getText();
-       String password=pass.getText();
-       String username=uname.getText();
-       String cpassword=cpass.getText();
-       if(username.equals("")||password.equals("")||name1.equals("")||cpassword.equals("")){
-           JOptionPane.showMessageDialog(rootPane, "Fields cannot be empty");
-       }
-       else{
-              try{
-                 Connection con=Database.connect();
-                String sql="INSERT INTO tbl_main (`name`,`username`,`password`) VALUES ('"+name1+"','"+username+"','"+password+"')";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
+        String name1 = name.getText();
+        String password = pass.getText();
+        String username = uname.getText();
+        String cpassword = cpass.getText();
+        if (username.equals("") || password.equals("") || name1.equals("") || cpassword.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Fields cannot be empty");
+        } else {
+            try {
 
-  JOptionPane.showMessageDialog(null, "registration success");
-   Login p=new Login();
-        p.setVisible(true);
-          dispose(); 
-            
+                Connection con = Database.connect();
+                String sql = "SELECT * FROM tbl_main where username='" + username + "'";
+
+                System.out.println(sql);
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(sql);
+
+                if (rs.next()) {
+
+                    JOptionPane.showMessageDialog(null, "user already exists please try another username");
+                    uname.setText("");
+
+                } else {
+
+                    if (password.equals(cpassword)) {
+                        try {
+
+                            String sql1 = "INSERT INTO tbl_main (`name`,`username`,`password`) VALUES ('" + name1 + "','" + username + "','" + password + "')";
+                            System.out.println(sql);
+                            Statement stmt1 = con.createStatement();
+                            int rs1 = stmt1.executeUpdate(sql1);
+
+                            JOptionPane.showMessageDialog(null, "registration success");
+                            Login p = new Login();
+                            p.setVisible(true);
+                            dispose();
+
+                        } catch (Exception e) {
+                            System.out.println("error" + e);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Password doesn't match");
+                    }
+                }
+            } catch (Exception e) {
+
             }
-             
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-            
-        
-        
-       }
-       
+        }
+
     }//GEN-LAST:event_registerActionPerformed
 
     private void register1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register1ActionPerformed
         // TODO add your handling code here:
-         Login p=new Login();
+        Login p = new Login();
         p.setVisible(true);
-          dispose(); 
-        
+        dispose();
+
     }//GEN-LAST:event_register1ActionPerformed
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
+    private void cpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpassActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
- 
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -320,6 +358,7 @@ int value;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField cpass;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -327,6 +366,7 @@ int value;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField name;
     private javax.swing.JPasswordField pass;

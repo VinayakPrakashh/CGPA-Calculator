@@ -1,9 +1,8 @@
 
-
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -11,21 +10,21 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
- *id = 1
+ * id = 1
+ *
  * @author ACER
  */
 public class sgpa_sem extends javax.swing.JFrame {
-
 
     /**
      * Creates new form dashboard
      */
     public sgpa_sem() {
         initComponents();
-        
+ setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,12 +35,13 @@ public class sgpa_sem extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        tmark = new javax.swing.JLabel();
-        cgpa = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
+        user = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        tmark = new javax.swing.JLabel();
         sem3 = new javax.swing.JLabel();
         sem2 = new javax.swing.JLabel();
         sem6 = new javax.swing.JLabel();
@@ -52,101 +52,113 @@ public class sgpa_sem extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1240, 518));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton3.setText("BACK");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(20, 20, 120, 50);
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("SELECT YOUR SEMESTER");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(490, 20, 420, 60);
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(" Connect Status");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(1140, 90, 100, 14);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitled-2.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(1150, 20, 70, 70);
+        jLabel3.setBounds(1300, 20, 50, 50);
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText(" Connection");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(1290, 70, 70, 14);
+
+        logout.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        logout.setText("LOGOUT");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(logout);
+        logout.setBounds(30, 650, 80, 23);
+
+        user.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        user.setForeground(new java.awt.Color(242, 242, 242));
+        user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/face.png"))); // NOI18N
+        user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userMouseClicked(evt);
+            }
+        });
+        jPanel1.add(user);
+        user.setBounds(1290, 630, 50, 60);
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton1.setText("  BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(-20, -11, 120, 50);
 
         tmark.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         tmark.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(tmark);
         tmark.setBounds(950, 430, 120, 70);
 
-        cgpa.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        cgpa.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(cgpa);
-        cgpa.setBounds(490, 430, 160, 70);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power.png"))); // NOI18N
-        jLabel2.setToolTipText("Turn Off");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 430, 60, 60);
-
         sem3.setBackground(new java.awt.Color(0, 0, 0));
-        sem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fgfd.png"))); // NOI18N
+        sem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM3.png"))); // NOI18N
         sem3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sem3MouseClicked(evt);
             }
         });
         jPanel1.add(sem3);
-        sem3.setBounds(850, 140, 223, 111);
+        sem3.setBounds(900, 140, 280, 127);
 
         sem2.setBackground(new java.awt.Color(0, 0, 0));
-        sem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitledsd-3.png"))); // NOI18N
+        sem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM2.png"))); // NOI18N
         sem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sem2MouseClicked(evt);
             }
         });
         jPanel1.add(sem2);
-        sem2.setBounds(510, 140, 223, 111);
+        sem2.setBounds(560, 140, 280, 127);
 
         sem6.setBackground(new java.awt.Color(0, 0, 0));
-        sem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/6.png"))); // NOI18N
+        sem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM6.png"))); // NOI18N
         sem6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sem6MouseClicked(evt);
             }
         });
         jPanel1.add(sem6);
-        sem6.setBounds(850, 310, 223, 111);
+        sem6.setBounds(890, 370, 280, 127);
 
         sem4.setBackground(new java.awt.Color(0, 0, 0));
-        sem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/4.png"))); // NOI18N
+        sem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM4.png"))); // NOI18N
         sem4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sem4MouseClicked(evt);
             }
         });
         jPanel1.add(sem4);
-        sem4.setBounds(170, 310, 223, 111);
+        sem4.setBounds(210, 370, 280, 127);
 
         sem1.setBackground(new java.awt.Color(0, 0, 0));
-        sem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitled-3.png"))); // NOI18N
+        sem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM1.png"))); // NOI18N
         sem1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sem1MouseClicked(evt);
@@ -156,21 +168,22 @@ public class sgpa_sem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sem1);
-        sem1.setBounds(170, 140, 223, 111);
+        sem1.setBounds(220, 140, 280, 127);
 
         sem5.setBackground(new java.awt.Color(0, 0, 0));
-        sem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/5.png"))); // NOI18N
+        sem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM5.png"))); // NOI18N
         sem5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sem5MouseClicked(evt);
             }
         });
         jPanel1.add(sem5);
-        sem5.setBounds(510, 310, 223, 111);
+        sem5.setBounds(560, 370, 280, 127);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/new.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard.png"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, -4, 1240, 520);
+        jLabel1.setBounds(0, -14, 1366, 730);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,7 +193,7 @@ public class sgpa_sem extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -188,61 +201,55 @@ public class sgpa_sem extends javax.swing.JFrame {
 
     private void sem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sem1MouseClicked
         // TODO add your handling code here:
- 
-     
-sem1_1 p=new sem1_1();
+
+        sem1_1 p = new sem1_1();
         p.setVisible(true);
-          dispose();
-   
-   
+        dispose();
+
+
     }//GEN-LAST:event_sem1MouseClicked
 
     private void sem2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sem2MouseClicked
         // TODO add your handling code here:
- 
-                sem2_1 p=new sem2_1();
+
+        sem2_1 p = new sem2_1();
         p.setVisible(true);
-          dispose();        
-        
-     
+        dispose();
+
+
     }//GEN-LAST:event_sem2MouseClicked
 
     private void sem3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sem3MouseClicked
         // TODO add your handling code here:
- 
-        sem3_1 p=new sem3_1();
+
+        sem3_1 p = new sem3_1();
         p.setVisible(true);
-          dispose();
+        dispose();
     }//GEN-LAST:event_sem3MouseClicked
 
     private void sem4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sem4MouseClicked
         // TODO add your handling code here:
-     
-          sem4_1 p=new sem4_1();
+
+        sem4_1 p = new sem4_1();
         p.setVisible(true);
-          dispose();
+        dispose();
     }//GEN-LAST:event_sem4MouseClicked
 
     private void sem5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sem5MouseClicked
         // TODO add your handling code here:
-      
-            sem5_1 p=new sem5_1();
+
+        sem5_1 p = new sem5_1();
         p.setVisible(true);
-       
+
     }//GEN-LAST:event_sem5MouseClicked
 
     private void sem6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sem6MouseClicked
         // TODO add your handling code here:
-    
-            sem6_1 p=new sem6_1();
-        p.setVisible(true);
-          dispose();
-    }//GEN-LAST:event_sem6MouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
+        sem6_1 p = new sem6_1();
+        p.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_sem6MouseClicked
 
     private void sem1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sem1MousePressed
         // TODO add your handling code here:
@@ -252,43 +259,72 @@ sem1_1 p=new sem1_1();
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-            try{
-                      Connection con=Database.connect();
 
-            String sql="SELECT sum1 FROM tblc where id = 1";
-            
+        try{
+            Connection con=Database.connect();
+            String sql="SELECT tot_p FROM tbl_main where id = 1";
+
             System.out.println(sql);
             Statement stmt=con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            
+
             if(rs.next())
             {
-  JOptionPane.showMessageDialog(null, "Database Connected");
+                JOptionPane.showMessageDialog(null, "Database Connected");
             }
         }
         catch(Exception e)
         {
-             
+
         }
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        
+        try{
+            Connection con=Database.connect();
+            String sql="SELECT * FROM tbl_main";
+
+            System.out.println(sql);
+            Statement stmt=con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            if(rs.next())
+            {
+                JOptionPane.showMessageDialog(null, "Database Connected");
+            }
+        }
+        catch(Exception e)
+        {
+
+        }
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-         choice1 p=new choice1();
+        Login.username="";
+        Login p=new Login();
         p.setVisible(true);
-          dispose(); 
-    }//GEN-LAST:event_jButton3ActionPerformed
+        dispose();
+    }//GEN-LAST:event_logoutActionPerformed
+
+    private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
+        user p=new user();
+        p.setVisible(true);
+    }//GEN-LAST:event_userMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        choice1 p=new choice1();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
- 
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -321,13 +357,13 @@ sem1_1 p=new sem1_1();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cgpa;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel sem1;
     private javax.swing.JLabel sem2;
     private javax.swing.JLabel sem3;
@@ -335,5 +371,6 @@ sem1_1 p=new sem1_1();
     private javax.swing.JLabel sem5;
     private javax.swing.JLabel sem6;
     private javax.swing.JLabel tmark;
+    private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
 }
