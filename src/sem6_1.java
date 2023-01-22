@@ -242,7 +242,7 @@ public class sem6_1 extends javax.swing.JFrame {
         jPanel1.add(progress);
         progress.setBounds(640, 560, 270, 10);
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACK2.png"))); // NOI18N
         jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel21MouseClicked(evt);

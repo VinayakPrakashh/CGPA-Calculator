@@ -35,25 +35,87 @@ public class sgpa_sem extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        logout = new javax.swing.JButton();
-        user = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        tmark = new javax.swing.JLabel();
         sem3 = new javax.swing.JLabel();
         sem2 = new javax.swing.JLabel();
         sem6 = new javax.swing.JLabel();
         sem4 = new javax.swing.JLabel();
         sem1 = new javax.swing.JLabel();
         sem5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
+        user = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
+
+        sem3.setBackground(new java.awt.Color(0, 0, 0));
+        sem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM3 - Copy.png"))); // NOI18N
+        sem3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sem3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(sem3);
+        sem3.setBounds(900, 140, 280, 127);
+
+        sem2.setBackground(new java.awt.Color(0, 0, 0));
+        sem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM2 - Copy.png"))); // NOI18N
+        sem2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sem2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(sem2);
+        sem2.setBounds(560, 140, 280, 127);
+
+        sem6.setBackground(new java.awt.Color(0, 0, 0));
+        sem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM6 - Copy.png"))); // NOI18N
+        sem6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sem6MouseClicked(evt);
+            }
+        });
+        jPanel1.add(sem6);
+        sem6.setBounds(890, 370, 280, 127);
+
+        sem4.setBackground(new java.awt.Color(0, 0, 0));
+        sem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM4 - Copy.png"))); // NOI18N
+        sem4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sem4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(sem4);
+        sem4.setBounds(210, 370, 280, 127);
+
+        sem1.setBackground(new java.awt.Color(0, 0, 0));
+        sem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM1 - Copy.png"))); // NOI18N
+        sem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sem1MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                sem1MousePressed(evt);
+            }
+        });
+        jPanel1.add(sem1);
+        sem1.setBounds(220, 140, 280, 127);
+
+        sem5.setBackground(new java.awt.Color(0, 0, 0));
+        sem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM5 - Copy.png"))); // NOI18N
+        sem5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sem5MouseClicked(evt);
+            }
+        });
+        jPanel1.add(sem5);
+        sem5.setBounds(560, 370, 280, 127);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,76 +174,7 @@ public class sgpa_sem extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(-20, -11, 120, 50);
 
-        tmark.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        tmark.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tmark);
-        tmark.setBounds(950, 430, 120, 70);
-
-        sem3.setBackground(new java.awt.Color(0, 0, 0));
-        sem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM3.png"))); // NOI18N
-        sem3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sem3MouseClicked(evt);
-            }
-        });
-        jPanel1.add(sem3);
-        sem3.setBounds(900, 140, 280, 127);
-
-        sem2.setBackground(new java.awt.Color(0, 0, 0));
-        sem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM2.png"))); // NOI18N
-        sem2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sem2MouseClicked(evt);
-            }
-        });
-        jPanel1.add(sem2);
-        sem2.setBounds(560, 140, 280, 127);
-
-        sem6.setBackground(new java.awt.Color(0, 0, 0));
-        sem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM6.png"))); // NOI18N
-        sem6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sem6MouseClicked(evt);
-            }
-        });
-        jPanel1.add(sem6);
-        sem6.setBounds(890, 370, 280, 127);
-
-        sem4.setBackground(new java.awt.Color(0, 0, 0));
-        sem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM4.png"))); // NOI18N
-        sem4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sem4MouseClicked(evt);
-            }
-        });
-        jPanel1.add(sem4);
-        sem4.setBounds(210, 370, 280, 127);
-
-        sem1.setBackground(new java.awt.Color(0, 0, 0));
-        sem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM1.png"))); // NOI18N
-        sem1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sem1MouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                sem1MousePressed(evt);
-            }
-        });
-        jPanel1.add(sem1);
-        sem1.setBounds(220, 140, 280, 127);
-
-        sem5.setBackground(new java.awt.Color(0, 0, 0));
-        sem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM5.png"))); // NOI18N
-        sem5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sem5MouseClicked(evt);
-            }
-        });
-        jPanel1.add(sem5);
-        sem5.setBounds(560, 370, 280, 127);
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard.png"))); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, -14, 1366, 730);
 
@@ -370,7 +363,6 @@ public class sgpa_sem extends javax.swing.JFrame {
     private javax.swing.JLabel sem4;
     private javax.swing.JLabel sem5;
     private javax.swing.JLabel sem6;
-    private javax.swing.JLabel tmark;
     private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
 }

@@ -432,7 +432,7 @@ try{
         jPanel1.add(progress);
         progress.setBounds(620, 580, 270, 10);
 
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACK2.png"))); // NOI18N
         jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel30MouseClicked(evt);
@@ -449,7 +449,7 @@ try{
         jPanel1.add(sem1t4);
         sem1t4.setBounds(1050, 210, 100, 40);
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/next.png"))); // NOI18N
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NEXT2.png"))); // NOI18N
         jLabel29.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel29MouseClicked(evt);

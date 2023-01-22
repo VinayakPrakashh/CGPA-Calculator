@@ -253,7 +253,7 @@ int value;
         jPanel1.add(progress);
         progress.setBounds(620, 520, 270, 10);
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/next.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NEXT2.png"))); // NOI18N
         jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel21MouseClicked(evt);
@@ -262,7 +262,7 @@ int value;
         jPanel1.add(jLabel21);
         jLabel21.setBounds(1240, 10, 119, 63);
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACK2.png"))); // NOI18N
         jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel16MouseClicked(evt);

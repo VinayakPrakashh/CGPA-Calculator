@@ -186,7 +186,7 @@ public class sem1 extends javax.swing.JFrame {
         jPanel1.add(hpeS);
         hpeS.setBounds(420, 490, 40, 30);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACK.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACK2.png"))); // NOI18N
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel11MouseClicked(evt);
@@ -195,7 +195,7 @@ public class sem1 extends javax.swing.JFrame {
         jPanel1.add(jLabel11);
         jLabel11.setBounds(10, 10, 120, 63);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NEXT.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NEXT2.png"))); // NOI18N
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel13MouseClicked(evt);

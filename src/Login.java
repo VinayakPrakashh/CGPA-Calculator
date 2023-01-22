@@ -1,6 +1,5 @@
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JFrame;
@@ -96,6 +95,14 @@ public class Login extends javax.swing.JFrame {
         login.setBackground(new java.awt.Color(204, 204, 204));
         login.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         login.setText("LOGIN");
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                loginMouseReleased(evt);
+            }
+        });
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
@@ -233,7 +240,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_unameActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-
+LoadingScreen loadingScreen = new LoadingScreen();
+loadingScreen.setVisible(true);
         username = uname.getText();
         String password = pass.getText();
 
@@ -252,6 +260,7 @@ public class Login extends javax.swing.JFrame {
                 ResultSet rs = stmt.executeQuery(sql);
 
                 if (rs.next()) {
+loadingScreen.dispose();
 
                     JOptionPane.showMessageDialog(null, "Login success");
 
@@ -260,6 +269,7 @@ public class Login extends javax.swing.JFrame {
                     dispose();
 
                 } else {
+loadingScreen.dispose();
 
                     JOptionPane.showMessageDialog(null, "Login failed");
                 }
@@ -286,6 +296,16 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_loginMouseClicked
+
+    private void loginMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseReleased
+        // TODO add your handling code here:
+     
+    }//GEN-LAST:event_loginMouseReleased
 
     /**
      * @param args the command line arguments

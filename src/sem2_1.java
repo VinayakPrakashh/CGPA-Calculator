@@ -37,7 +37,6 @@ public class sem2_1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel29 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         perc = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -54,8 +53,6 @@ public class sem2_1 extends javax.swing.JFrame {
         lsS = new javax.swing.JTextField();
         progress = new javax.swing.JProgressBar();
         sem1totnew = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         ls = new javax.swing.JTextField();
         pcl = new javax.swing.JTextField();
         wp = new javax.swing.JTextField();
@@ -76,8 +73,10 @@ public class sem2_1 extends javax.swing.JFrame {
         ech2 = new javax.swing.JTextField();
         pc = new javax.swing.JTextField();
         eg = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JButton();
         Sgpa = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
         percentage1 = new javax.swing.JLabel();
@@ -95,7 +94,7 @@ public class sem2_1 extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         ec3 = new javax.swing.JTextField();
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/next.png"))); // NOI18N
+      
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -318,24 +317,6 @@ public class sem2_1 extends javax.swing.JFrame {
         sem1totnew.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(sem1totnew);
         sem1totnew.setBounds(220, 50, 110, 0);
-
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/next.png"))); // NOI18N
-        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel24MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel24);
-        jLabel24.setBounds(1240, 10, 119, 63);
-
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
-        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel23MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel23);
-        jLabel23.setBounds(10, 10, 120, 63);
 
         ls.setEditable(false);
         ls.setFocusable(false);
@@ -572,6 +553,15 @@ public class sem2_1 extends javax.swing.JFrame {
         jPanel1.add(eg);
         eg.setBounds(430, 370, 40, 30);
 
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NEXT2.png"))); // NOI18N
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel28);
+        jLabel28.setBounds(1240, 10, 119, 63);
+
         jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jToggleButton1.setText("CALCULATE");
         jToggleButton1.setToolTipText("Click to Calculate Your SEM CGPA");
@@ -587,6 +577,15 @@ public class sem2_1 extends javax.swing.JFrame {
         Sgpa.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(Sgpa);
         Sgpa.setBounds(890, 340, 390, 70);
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACK2.png"))); // NOI18N
+        jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel22MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel22);
+        jLabel22.setBounds(10, 10, 120, 63);
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -817,20 +816,6 @@ public class sem2_1 extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
-        // TODO add your handling code here:
-    sgpa_sem p=new sgpa_sem();
-        p.setVisible(true);
-          dispose();
-    }//GEN-LAST:event_jLabel23MouseClicked
-
-    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
-        // TODO add your handling code here:
-           sem3_1 p=new sem3_1();
-        p.setVisible(true);
-          dispose();
-    }//GEN-LAST:event_jLabel24MouseClicked
 
     private void ec2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ec2KeyPressed
         // TODO add your handling code here:
@@ -1382,6 +1367,20 @@ public class sem2_1 extends javax.swing.JFrame {
       
         
     }//GEN-LAST:event_lsSKeyReleased
+
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+        // TODO add your handling code here:
+         sem3_1 p=new sem3_1();
+        p.setVisible(true);
+          dispose();
+    }//GEN-LAST:event_jLabel28MouseClicked
+
+    private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+        // TODO add your handling code here:
+          sgpa_sem p=new sgpa_sem();
+        p.setVisible(true);
+          dispose();
+    }//GEN-LAST:event_jLabel22MouseClicked
     
     /**
      * @param args the command line arguments
@@ -1448,12 +1447,11 @@ public class sem2_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

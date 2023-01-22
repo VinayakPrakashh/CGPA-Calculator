@@ -1,7 +1,9 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -9,7 +11,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author ACER
@@ -19,32 +20,26 @@ public class sem2 extends javax.swing.JFrame {
     /**
      * Creates new form sem1
      */
-  public sem2() {
+    public sem2() {
         initComponents();
         perc.setVisible(false);
-      
- 
-      
-       
-      
-    
-         try{
-      Connection con=Database.connect();
-            String sql="SELECT sem1_p FROM tbl_main WHERE username='"+Login.username+"'";
-            
+
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        try {
+            Connection con = Database.connect();
+            String sql = "SELECT sem1_p FROM tbl_main WHERE username='" + Login.username + "'";
+
             System.out.println(sql);
-            Statement stmt=con.createStatement();
+            Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-    int id = rs.getInt("sem1_p");
-    String s=String.valueOf(id);
-          sem1t.setText(s);
+
+            if (rs.next()) {
+                int id = rs.getInt("sem1_p");
+                String s = String.valueOf(id);
+                sem1t.setText(s);
             }
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("error" + e);
         }
 
@@ -59,7 +54,7 @@ public class sem2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel29 = new javax.swing.JLabel();
+    
         jPanel1 = new javax.swing.JPanel();
         perc = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -76,8 +71,6 @@ public class sem2 extends javax.swing.JFrame {
         lsS = new javax.swing.JTextField();
         progress = new javax.swing.JProgressBar();
         sem1totnew = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         sem1t = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         ls = new javax.swing.JTextField();
@@ -96,11 +89,13 @@ public class sem2 extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         em2 = new javax.swing.JTextField();
         ec2 = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
         ep2 = new javax.swing.JTextField();
         ech2 = new javax.swing.JTextField();
         pc = new javax.swing.JTextField();
         eg = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
         Cgpa = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
         percentage1 = new javax.swing.JLabel();
@@ -119,7 +114,7 @@ public class sem2 extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         ec3 = new javax.swing.JTextField();
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/next.png"))); // NOI18N
+      
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -343,24 +338,6 @@ public class sem2 extends javax.swing.JFrame {
         jPanel1.add(sem1totnew);
         sem1totnew.setBounds(220, 50, 110, 0);
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/next.png"))); // NOI18N
-        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel24MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel24);
-        jLabel24.setBounds(1240, 10, 119, 63);
-
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
-        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel23MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel23);
-        jLabel23.setBounds(10, 10, 120, 63);
-
         sem1t.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sem1tActionPerformed(evt);
@@ -537,6 +514,15 @@ public class sem2 extends javax.swing.JFrame {
         jPanel1.add(ec2);
         ec2.setBounds(430, 160, 40, 30);
 
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NEXT2.png"))); // NOI18N
+        jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel30MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel30);
+        jLabel30.setBounds(1240, 10, 120, 63);
+
         ep2.setEditable(false);
         ep2.setFocusable(false);
         ep2.setRequestFocusEnabled(false);
@@ -620,6 +606,16 @@ public class sem2 extends javax.swing.JFrame {
         });
         jPanel1.add(jToggleButton1);
         jToggleButton1.setBounds(610, 460, 210, 50);
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACK2.png"))); // NOI18N
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel28);
+        jLabel28.setBounds(10, 10, 120, 63);
+        jLabel28.getAccessibleContext().setAccessibleDescription("");
 
         Cgpa.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         Cgpa.setForeground(new java.awt.Color(255, 255, 255));
@@ -744,7 +740,7 @@ public class sem2 extends javax.swing.JFrame {
     }//GEN-LAST:event_em2ActionPerformed
 
     private void ec2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ec2ActionPerformed
-     
+
     }//GEN-LAST:event_ec2ActionPerformed
 
     private void ep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ep2ActionPerformed
@@ -765,115 +761,103 @@ public class sem2 extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-            if(ec2S.getText().isEmpty()||em2S.getText().isEmpty()||ep2S.getText().isEmpty()||ech2S.getText().isEmpty()||pcS.getText().isEmpty()||egS.getText().isEmpty()||wpS.getText().isEmpty()||esl2S.getText().isEmpty()||pclSE.getText().isEmpty()||lsS.getText().isEmpty()){
+        if (ec2S.getText().isEmpty() || em2S.getText().isEmpty() || ep2S.getText().isEmpty() || ech2S.getText().isEmpty() || pcS.getText().isEmpty() || egS.getText().isEmpty() || wpS.getText().isEmpty() || esl2S.getText().isEmpty() || pclSE.getText().isEmpty() || lsS.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Fill Grades correctly");
-      }
-      else{
-             String ec2H, em2H, ep2H, ech2H, pcH, egH, wpH, esl2H, pclH, lsH, sem1tl;
-        float average;
-       float totalmark;
-       float totalmark2;
-       float totalmark3;
-         float totalmark4;
-       double percentage;
-        float cgpa;
-         float cgpa2;
-        ec2H = ec2.getText();
-        em2H = em2.getText();
-        ep2H = ep2.getText();
-        ech2H = ech2.getText();
-     sem1tl = sem1t.getText();
-        pcH = pc.getText();
-      
-        egH = eg.getText();
-    wpH = wp.getText();
-    
-    esl2H = esl2.getText();
-        pclH = pcl.getText();
-        lsH = ls.getText();
-                float ecgrade =Float.parseFloat(ec2H);
-        float emgrade = Float.parseFloat(em2H);
-        float epgrade = Float.parseFloat(ep2H);
-        float echgrade = Float.parseFloat(ech2H);
-      
-        float pcgrade = Float.parseFloat(pcH);
-     
-        float eggrade = Float.parseFloat(egH);
-        float wpgrade = Float.parseFloat(wpH);
-        float eslgrade = Float.parseFloat(esl2H);
-        float pclgrade = Float.parseFloat(pclH);
-        float lsgrade = Float.parseFloat(lsH);
-          float sem1tH = Float.parseFloat(sem1tl);
-        totalmark = ((ecgrade*3) + (emgrade*6) + (epgrade*3) + (echgrade*3) + (pcgrade*4) + (eggrade*5) + (wpgrade*3) + (eslgrade*3) + (pclgrade*2) + (lsgrade*2));
-       
-        cgpa = (((ecgrade*3) + (emgrade*6) + (epgrade*3) + (echgrade*3) + (pcgrade*4) + (eggrade*5) + (wpgrade*3) + (eslgrade*3) + (pclgrade*2) + (lsgrade*2)) / 34);
-         percentage = (cgpa*9.5);
-  totalmark2 = (sem1tH + totalmark);
-  
-  totalmark3 = totalmark;
-  totalmark4 = sem1tH;
-  cgpa2 = (totalmark2 / 55);
-  double rounded = Math.round(cgpa2*100)/100.0;
+        } else {
+            String ec2H, em2H, ep2H, ech2H, pcH, egH, wpH, esl2H, pclH, lsH, sem1tl;
+            float average;
+            float totalmark;
+            float totalmark2;
+            float totalmark3;
+            float totalmark4;
+            double percentage;
+            float cgpa;
+            float cgpa2;
+            ec2H = ec2.getText();
+            em2H = em2.getText();
+            ep2H = ep2.getText();
+            ech2H = ech2.getText();
+            sem1tl = sem1t.getText();
+            pcH = pc.getText();
 
-   
-         double rounded2 = Math.round(percentage*100)/100.0;
-        Cgpa.setText(rounded+"");
-      
-        total.setText(totalmark+"");
-        percentage1.setText(rounded2+"");
-          String cgpA = Cgpa.getText();
-        System.out.println(cgpA);
-    try{
-                 Connection con=Database.connect();
-                String sql="UPDATE tbl_main SET tot_cgpa=('"+cgpA+"') WHERE username='"+Login.username+"'";
+            egH = eg.getText();
+            wpH = wp.getText();
+
+            esl2H = esl2.getText();
+            pclH = pcl.getText();
+            lsH = ls.getText();
+            float ecgrade = Float.parseFloat(ec2H);
+            float emgrade = Float.parseFloat(em2H);
+            float epgrade = Float.parseFloat(ep2H);
+            float echgrade = Float.parseFloat(ech2H);
+
+            float pcgrade = Float.parseFloat(pcH);
+
+            float eggrade = Float.parseFloat(egH);
+            float wpgrade = Float.parseFloat(wpH);
+            float eslgrade = Float.parseFloat(esl2H);
+            float pclgrade = Float.parseFloat(pclH);
+            float lsgrade = Float.parseFloat(lsH);
+            float sem1tH = Float.parseFloat(sem1tl);
+            totalmark = ((ecgrade * 3) + (emgrade * 6) + (epgrade * 3) + (echgrade * 3) + (pcgrade * 4) + (eggrade * 5) + (wpgrade * 3) + (eslgrade * 3) + (pclgrade * 2) + (lsgrade * 2));
+
+            cgpa = (((ecgrade * 3) + (emgrade * 6) + (epgrade * 3) + (echgrade * 3) + (pcgrade * 4) + (eggrade * 5) + (wpgrade * 3) + (eslgrade * 3) + (pclgrade * 2) + (lsgrade * 2)) / 34);
+            percentage = (cgpa * 9.5);
+            totalmark2 = (sem1tH + totalmark);
+
+            totalmark3 = totalmark;
+            totalmark4 = sem1tH;
+            cgpa2 = (totalmark2 / 55);
+            double rounded = Math.round(cgpa2 * 100) / 100.0;
+
+            double rounded2 = Math.round(percentage * 100) / 100.0;
+            Cgpa.setText(rounded + "");
+
+            total.setText(totalmark + "");
+            percentage1.setText(rounded2 + "");
+            String cgpA = Cgpa.getText();
+            System.out.println(cgpA);
+            try {
+                Connection con = Database.connect();
+                String sql = "UPDATE tbl_main SET tot_cgpa=('" + cgpA + "') WHERE username='" + Login.username + "'";
                 System.out.println(sql);
-                Statement stmt=con.createStatement();
+                Statement stmt = con.createStatement();
                 int rs = stmt.executeUpdate(sql);
 
-            }
-            catch(Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("error" + e);
             }
-        
-            
+
             perc.setVisible(true);
-         int i = (int) cgpa;
-     
-        for(i=1;i<=10;i++){
-        progress.setValue((int) cgpa);
+            int i = (int) cgpa;
+
+            for (i = 1; i <= 10; i++) {
+                progress.setValue((int) cgpa);
+            }
+            String sem1tot = total.getText();
+            System.out.println(sem1tot);
+            try {
+                Connection con = Database.connect();
+                String sql = "UPDATE tbl_main SET sem2_p=('" + sem1tot + "') WHERE username='" + Login.username + "'";
+                System.out.println(sql);
+                Statement stmt = con.createStatement();
+                int rs = stmt.executeUpdate(sql);
+
+            } catch (Exception e) {
+                System.out.println("error" + e);
+            }
+
+            try {
+                Connection con = Database.connect();
+                String sql = "UPDATE tbl_main SET tot_p =sem1_p+sem2_p where username='" + Login.username + "'";
+                System.out.println(sql);
+                Statement stmt = con.createStatement();
+                int rs = stmt.executeUpdate(sql);
+
+            } catch (Exception e) {
+                System.out.println("error" + e);
+            }
         }
-       String sem1tot = total.getText();
-        System.out.println(sem1tot);
-   try{
-                 Connection con=Database.connect();
-                String sql="UPDATE tbl_main SET sem2_p=('"+sem1tot+"') WHERE username='"+Login.username+"'";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
-
-            }
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-           
-
-
-
- try{
-                 Connection con=Database.connect();
-                String sql="UPDATE tbl_main SET tot_p =sem1_p+sem2_p where username='"+Login.username+"'";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
-
-            }
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-            }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void wpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wpActionPerformed
@@ -900,43 +884,29 @@ public class sem2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sem1tActionPerformed
 
-    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
-        // TODO add your handling code here:
-    dashboard p=new dashboard();
-        p.setVisible(true);
-          dispose();
-    }//GEN-LAST:event_jLabel23MouseClicked
-
-    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
-        // TODO add your handling code here:
-           sem3 p=new sem3();
-        p.setVisible(true);
-          dispose();
-    }//GEN-LAST:event_jLabel24MouseClicked
-
     private void ec2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ec2KeyPressed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_ec2KeyPressed
 
     private void em2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_em2KeyPressed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_em2KeyPressed
-    
+
     private void ep2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ep2KeyPressed
         // TODO add your handling code here:
-    
+
     }//GEN-LAST:event_ep2KeyPressed
 
     private void ech2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ech2KeyPressed
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_ech2KeyPressed
 
     private void pcKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pcKeyPressed
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_pcKeyPressed
 
     private void egMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_egMouseClicked
@@ -945,27 +915,27 @@ public class sem2 extends javax.swing.JFrame {
 
     private void egKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_egKeyPressed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_egKeyPressed
 
     private void wpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_wpKeyPressed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_wpKeyPressed
 
     private void esl2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_esl2KeyPressed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_esl2KeyPressed
 
     private void pclKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pclKeyPressed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_pclKeyPressed
 
     private void lsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lsKeyPressed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_lsKeyPressed
 
     private void ec3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ec3ActionPerformed
@@ -1042,80 +1012,74 @@ public class sem2 extends javax.swing.JFrame {
 
     private void ec2SFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ec2SFocusLost
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_ec2SFocusLost
 
     private void em2SFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_em2SFocusLost
         // TODO add your handling code here:
-   
+
     }//GEN-LAST:event_em2SFocusLost
 
     private void ep2SFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ep2SFocusLost
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_ep2SFocusLost
 
     private void pcSFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pcSFocusLost
         // TODO add your handling code here:
-    
+
     }//GEN-LAST:event_pcSFocusLost
 
     private void egSFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_egSFocusLost
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_egSFocusLost
 
     private void wpSFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_wpSFocusLost
         // TODO add your handling code here:
-    
+
     }//GEN-LAST:event_wpSFocusLost
 
     private void pclSEFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pclSEFocusLost
         // TODO add your handling code here:
-    
+
     }//GEN-LAST:event_pclSEFocusLost
 
     private void lsSFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lsSFocusLost
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_lsSFocusLost
 
     private void ec2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ec2SKeyReleased
         // TODO add your handling code here:
-                                              String i;
-        i=ec2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          ec2.setText("10");
+        String i;
+        i = ec2S.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            ec2.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            ec2.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            ec2.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            ec2.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            ec2.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            ec2.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            ec2.setText("0");
+        } else {
+
         }
-      else if("A".equals(i)||"a".equals(i)){
-            
-         ec2.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-          ec2.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-          ec2.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-          ec2.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-          ec2.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-         ec2.setText("0");
-        }else{
-                                    
-                               }
-     
+
     }//GEN-LAST:event_ec2SKeyReleased
 
     private void em2SFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_em2SFocusGained
@@ -1124,352 +1088,312 @@ public class sem2 extends javax.swing.JFrame {
 
     private void em2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_em2SKeyReleased
         // TODO add your handling code here:
-                                                  String i;
-        i=em2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          em2.setText("10");
+        String i;
+        i = em2S.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            em2.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            em2.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            em2.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            em2.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            em2.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            em2.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            em2.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-           em2.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-         em2.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          em2.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-        em2.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-          em2.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          em2.setText("0");
-        }else{
-                                    
-                               }
-      
+
     }//GEN-LAST:event_em2SKeyReleased
 
     private void ep2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ep2SKeyReleased
         // TODO add your handling code here:
-                                                String i;
-        i=ep2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          ep2.setText("10");
+        String i;
+        i = ep2S.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            ep2.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            ep2.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            ep2.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            ep2.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            ep2.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            ep2.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            ep2.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-         ep2.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-         ep2.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-         ep2.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-         ep2.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-           ep2.setText("5");
-        }
-                             else if("F".equals(i)||"f".equals(i)){
-          
-         ep2.setText("0");
-        }else{
-                                    
-                               }
-       
+
     }//GEN-LAST:event_ep2SKeyReleased
 
     private void ech2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ech2SKeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=ech2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          ech2.setText("10");
+        String i;
+        i = ech2S.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            ech2.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            ech2.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            ech2.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            ech2.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            ech2.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            ech2.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            ech2.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-          ech2.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-          ech2.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          ech2.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          ech2.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-         ech2.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ech2.setText("0");
-        }else{
-                                    
-                               }
-     
+
     }//GEN-LAST:event_ech2SKeyReleased
 
     private void pcSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pcSKeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=pcS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-         pc.setText("10");
+        String i;
+        i = pcS.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            pc.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            pc.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            pc.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            pc.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            pc.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            pc.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            pc.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-          pc.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-          pc.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          pc.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          pc.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-          pc.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          pc.setText("0");
-        }else{
-                                    
-                               }
-       
+
     }//GEN-LAST:event_pcSKeyReleased
 
     private void egSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_egSKeyReleased
         // TODO add your handling code here:
-                                               String i;
-        i=egS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          eg.setText("10");
+        String i;
+        i = egS.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            eg.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            eg.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            eg.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            eg.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            eg.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            eg.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            eg.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-           eg.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-          eg.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          eg.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          eg.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-          eg.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-         eg.setText("0");
-        }else{
-                                    
-                               }
-      
+
     }//GEN-LAST:event_egSKeyReleased
 
     private void wpSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_wpSKeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=wpS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           wp.setText("10");
+        String i;
+        i = wpS.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            wp.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            wp.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            wp.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            wp.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            wp.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            wp.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            wp.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-          wp.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-         wp.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          wp.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          wp.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-          wp.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-         wp.setText("0");
-        }else{
-                                    
-                               }
-     
+
     }//GEN-LAST:event_wpSKeyReleased
 
     private void esl2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_esl2SKeyReleased
         // TODO add your handling code here:
-                                                String i;
-        i=esl2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           esl2.setText("10");
+        String i;
+        i = esl2S.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            esl2.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            esl2.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            esl2.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            esl2.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            esl2.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            esl2.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            esl2.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-          esl2.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-           esl2.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-           esl2.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          esl2.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-           esl2.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          esl2.setText("0");
-        }else{
-                                    
-                               }
-      
+
     }//GEN-LAST:event_esl2SKeyReleased
 
     private void pclSEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pclSEKeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=pclSE.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           pcl.setText("10");
+        String i;
+        i = pclSE.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            pcl.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            pcl.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            pcl.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            pcl.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            pcl.setText("6");
+        } else if ("E".equals(i) || "e".equals(i)) {
+
+            pcl.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            pcl.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-           pcl.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-           pcl.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-           pcl.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-           pcl.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-           pcl.setText("5");
-        }
-                              else if("F".equals(i)||"f".equals(i)){
-          
-           pcl.setText("0");
-        }else{
-                                    
-                               }
-  
+
     }//GEN-LAST:event_pclSEKeyReleased
 
     private void lsSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lsSKeyReleased
         // TODO add your handling code here:
-                                                String i;
-        i=lsS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           ls.setText("10");
+        String i;
+        i = lsS.getText();
+
+        if ("S".equals(i) || "s".equals(i)) {
+
+            ls.setText("10");
+        } else if ("A".equals(i) || "a".equals(i)) {
+
+            ls.setText("9");
+        } else if ("B".equals(i) || "b".equals(i)) {
+
+            ls.setText("8");
+        } else if ("C".equals(i) || "c".equals(i)) {
+
+            ls.setText("7");
+        } else if ("D".equals(i) || "d".equals(i)) {
+
+            ls.setText("6");
+        } else if ("E".equals(i) || "e".equals(i) || "e".equals(i)) {
+
+            ls.setText("5");
+        } else if ("F".equals(i) || "f".equals(i)) {
+
+            ls.setText("0");
+        } else {
+
         }
-     else if("A".equals(i)||"a".equals(i)){
-            
-           ls.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-           ls.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-           ls.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-           ls.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)||"e".equals(i)){
-            
-           ls.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ls.setText("0");
-        }else{
-                                    
-                               }
-  
-        
+
+
     }//GEN-LAST:event_lsSKeyReleased
-    
+
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+        // TODO add your handling code here:
+        dashboard p = new dashboard();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel28MouseClicked
+
+    private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
+        // TODO add your handling code here:
+        sem3 p = new sem3();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel30MouseClicked
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1531,13 +1455,12 @@ public class sem2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
