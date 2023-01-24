@@ -27,7 +27,7 @@ int value;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
          try{
             Connection con=Database.connect();
-            String sql="SELECT checkbox FROM tbl_main WHERE username='"+Login.username+"'";
+            String sql="SELECT * FROM tbl_main WHERE username='"+Login.username+"'";
             
             System.out.println(sql);
             Statement stmt=con.createStatement();
@@ -35,125 +35,65 @@ int value;
          
             if(rs.next())
             {
-    int id = rs.getInt("checkbox");
-   value = id;
- 
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("error" + e);
-        }
-      if(value == 1){
+    int value = rs.getInt("checkbox");
+   
+  if(value == 1){
           
              sem1.setVisible(false);
                sem2.setVisible(false);
                check.doClick();
-                try{
-             Connection con=Database.connect();
-            String sql="SELECT tot_cgpal FROM tbl_main WHERE username ='"+Login.username+"'";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
+               
+           
+       
     float id = rs.getFloat("tot_cgpal");
  double rounded = Math.round(id*100)/100.0;
     
       progress.setValue((int) id);  
     String s=String.valueOf(rounded);
           cgpa.setText(s);
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("error" + e);
-        }
-      
-       
-    
-                     try{
-   Connection con=Database.connect();
-            String sql="SELECT tot_pl FROM tbl_main where username ='"+Login.username+"'";
             
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-    int id = rs.getInt("tot_pl");
-     progress2.setValue(id); 
-    String s=String.valueOf(id);
-          tmark.setText(s);
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("error" + e);
-        }
-        }
-    else{
+         int point = rs.getInt("tot_pl");
+     progress2.setValue(point); 
+    String points=String.valueOf(point);
+          tmark.setText(points);
+  }
+     else{
                sem1.setVisible(true);
                sem2.setVisible(true);
                progress2.setVisible(false);
                
-                 try{
-        Connection con=Database.connect();
-                String sql="UPDATE tbl_main SET checkbox=0 WHERE username ='"+Login.username+"'";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
-
-            }
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-                 try{
-             Connection con=Database.connect();
-            String sql="SELECT tot_cgpa FROM tbl_main WHERE username ='"+Login.username+"'";
+          
+    float cgpas = rs.getFloat("tot_cgpa");
+    double roundedcgpa = Math.round(cgpas*100)/100.0;
+    progress.setValue((int) cgpas); 
+    String scgpa=String.valueOf(roundedcgpa);
+          cgpa.setText(scgpa);
             
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-    float id = rs.getFloat("tot_cgpa");
-    double rounded = Math.round(id*100)/100.0;
-    progress.setValue((int) id); 
-    String s=String.valueOf(rounded);
-          cgpa.setText(s);
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("error" + e);
-        }
-                            try{
-             Connection con=Database.connect();
-            String sql="SELECT tot_p FROM tbl_main where username ='"+Login.username+"'";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
+   
     int id = rs.getInt("tot_p");
      progress1.setValue(id); 
     String s=String.valueOf(id);
           tmark.setText(s);
+            
+        
+      
+         }
+
             }
-        }
+         }
+            
+        
+         
         catch(Exception e)
         {
             System.out.println("error" + e);
         }
-         }
+     
+       
+    
+                    
+        
+    
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -175,7 +115,6 @@ int value;
         progress2 = new javax.swing.JProgressBar();
         progress1 = new javax.swing.JProgressBar();
         progress = new javax.swing.JProgressBar();
-        jButton1 = new javax.swing.JButton();
         tmark = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         check = new javax.swing.JCheckBox();
@@ -260,7 +199,7 @@ int value;
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(20, 460, 150, 27);
+        jButton2.setBounds(30, 420, 150, 27);
 
         progress2.setMaximum(1200);
         progress2.setToolTipText("Your Progress");
@@ -276,17 +215,6 @@ int value;
         progress.setToolTipText("Your Progress");
         jPanel1.add(progress);
         progress.setBounds(220, 630, 220, 10);
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("REFRESH SCORE");
-        jButton1.setToolTipText("Click after changing from LET to Normal and vice-versa");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(20, 400, 150, 27);
 
         tmark.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         tmark.setForeground(new java.awt.Color(255, 255, 255));
@@ -305,13 +233,18 @@ int value;
         check.setToolTipText("Click Here if You are a Lateral Entry Student");
         check.setBorder(new javax.swing.border.MatteBorder(null));
         check.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        check.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkMouseClicked(evt);
+            }
+        });
         check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkActionPerformed(evt);
             }
         });
         jPanel1.add(check);
-        check.setBounds(40, 210, 110, 50);
+        check.setBounds(50, 210, 110, 50);
         check.getAccessibleContext().setAccessibleDescription("hi");
 
         cgpa.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -444,129 +377,8 @@ int value;
 
     private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         // TODO add your handling code here:
-          if(check.isSelected()){
-             sem1.setVisible(false);
-               sem2.setVisible(false);
-               
-               
-                try{
-                Connection con=Database.connect();
-                String sql="UPDATE tbl_main SET checkbox=1 WHERE username='"+Login.username+"'";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
-
-            }
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-           try{
-            Connection con=Database.connect();
-            String sql="SELECT tot_cgpa FROM tbl_main WHERE username='"+Login.username+"'";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-    float id = rs.getFloat("tot_cgpa");
-     double rounded = Math.round(id*100)/100.0;
-    String s=String.valueOf(rounded);
-          cgpa.setText(s);
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("error" + e);
-        }
-                     try{
-            Connection con=Database.connect();
-            String sql="SELECT tot_pl FROM tbl_main where username='"+Login.username+"'";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-    int id = rs.getInt("tot_pl");
-    String s=String.valueOf(id);
-          tmark.setText(s);
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("error" + e);
-        }
-                     
-        }
-    else{
-               sem1.setVisible(true);
-               sem2.setVisible(true);
-               
-                 try{
-              Connection con=Database.connect();
-                String sql="UPDATE tbl_main SET checkbox=0 WHERE username='"+Login.username+"'";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
-
-            }
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-          }
-                try{
-          Connection con=Database.connect();
-            String sql="SELECT tot_cgpa FROM tbl_main WHERE username='"+Login.username+"'";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-           
-            if(rs.next())
-            {
-    float id = rs.getFloat("tot_cgpa");
-     double rounded = Math.round(id*100)/100.0;
-    String s=String.valueOf(rounded);
-          cgpa.setText(s);
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("error" + e);
-        }
-                            try{
-             Connection con=Database.connect();
-            String sql="SELECT tot_p FROM tbl_main where username='"+Login.username+"'";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-    int id = rs.getInt("tot_p");
-    String s=String.valueOf(id);
-          tmark.setText(s);
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("error" + e);
-        }
-                
+         
     }//GEN-LAST:event_checkActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         dashboard p=new dashboard();
-        p.setVisible(true);
-          dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        try{
@@ -617,44 +429,12 @@ int value;
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
 
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT tot_p FROM tbl_main where id = 1";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
+       checkconn.checkConnection();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
+         checkconn.checkConnection();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
@@ -676,6 +456,88 @@ int value;
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void checkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkMouseClicked
+        // TODO add your handling code here:
+         if(check.isSelected()){
+             sem1.setVisible(false);
+               sem2.setVisible(false);
+               
+               
+                try{
+                Connection con=Database.connect();
+                String sql="UPDATE tbl_main SET checkbox=1 WHERE username='"+Login.username+"'";
+                System.out.println(sql);
+                Statement stmt=con.createStatement();
+                int rs = stmt.executeUpdate(sql);
+
+            }
+            catch(Exception e)
+            {
+                System.out.println("error" + e);
+            }
+          }
+          else{
+              try{
+                Connection con=Database.connect();
+                String sql="UPDATE tbl_main SET checkbox=0 WHERE username='"+Login.username+"'";
+                System.out.println(sql);
+                Statement stmt=con.createStatement();
+                int rs = stmt.executeUpdate(sql);
+
+            }
+            catch(Exception e)
+            {
+                System.out.println("error" + e);
+            }
+          }
+          try{
+            Connection con=Database.connect();
+            String sql="SELECT * FROM tbl_main WHERE username='"+Login.username+"'";
+            
+            System.out.println(sql);
+            Statement stmt=con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            if(rs.next())
+            {
+                 if(check.isSelected()){
+    float id = rs.getFloat("tot_cgpal");
+     double rounded = Math.round(id*100)/100.0;
+    String s=String.valueOf(rounded);
+          cgpa.setText(s);
+             int point = rs.getInt("tot_pl");
+    String points=String.valueOf(point);
+          tmark.setText(points);
+                 }
+                  else{
+               sem1.setVisible(true);
+               sem2.setVisible(true);
+               
+         
+    float id = rs.getFloat("tot_cgpa");
+     double rounded = Math.round(id*100)/100.0;
+    String s=String.valueOf(rounded);
+          cgpa.setText(s);
+            
+      
+           
+    int point = rs.getInt("tot_p");
+    String points=String.valueOf(point);
+          tmark.setText(points);
+        
+            }
+            
+        }
+          }
+        catch(Exception e)
+        {
+            System.out.println("error" + e);
+        }
+                    
+        
+      
+    }//GEN-LAST:event_checkMouseClicked
 
     /**
      * @param args the command line arguments
@@ -716,7 +578,6 @@ int value;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cgpa;
     private javax.swing.JCheckBox check;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

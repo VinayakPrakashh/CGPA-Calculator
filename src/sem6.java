@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 /*
@@ -28,7 +29,7 @@ public class sem6 extends javax.swing.JFrame {
         try {
             Connection con = Database.connect();
 
-            String sql = "SELECT checkbox FROM tbl_main WHERE username='" + Login.username + "'";
+            String sql = "SELECT * FROM tbl_main WHERE username='" + Login.username + "'";
 
             System.out.println(sql);
             Statement stmt = con.createStatement();
@@ -38,157 +39,45 @@ public class sem6 extends javax.swing.JFrame {
                 int id = rs.getInt("checkbox");
                 value = id;
 
+                if (value == 1) {
+
+                    sem1t1.setVisible(false);
+                    sem1t2.setVisible(false);
+                    sem1tl.setVisible(false);
+                    sem1t2l.setVisible(false);
+                    int sem3 = rs.getInt("sem3_pl");
+                    String s3 = String.valueOf(sem3);
+                    sem1t3.setText(s3);
+                    int sem4 = rs.getInt("sem4_pl");
+                    String s4 = String.valueOf(sem4);
+                    sem1t4.setText(s4);
+                    int sem5 = rs.getInt("sem5_pl");
+                    String s5 = String.valueOf(sem5);
+                    sem1t5.setText(s5);
+                } else {
+                    int sem1 = rs.getInt("sem1_pl");
+                    String s1 = String.valueOf(sem1);
+                    sem1t1.setText(s1);
+                    int sem2 = rs.getInt("sem2_pl");
+                    String s2 = String.valueOf(sem2);
+                    sem1t2.setText(s2);
+
+                    int sem3 = rs.getInt("sem3_p");
+                    String s3 = String.valueOf(sem3);
+                    sem1t3.setText(s3);
+                    int sem4 = rs.getInt("sem4_p");
+                    String s4 = String.valueOf(sem4);
+                    sem1t4.setText(s4);
+                    int sem5 = rs.getInt("sem5_p");
+                    String s5 = String.valueOf(sem5);
+                    sem1t5.setText(s5);
+
+                }
             }
         } catch (Exception e) {
             System.out.println("error" + e);
         }
-        if (value == 1) {
 
-            sem1t1.setVisible(false);
-            sem1t2.setVisible(false);
-            sem1tl.setVisible(false);
-            sem1t2l.setVisible(false);
-            try {
-                Connection con = Database.connect();
-
-                String sql = "SELECT sem3_pl FROM tbl_main WHERE username='" + Login.username + "'";
-
-                System.out.println(sql);
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-
-                if (rs.next()) {
-                    int id = rs.getInt("sem3_pl");
-                    String s = String.valueOf(id);
-                    sem1t3.setText(s);
-                }
-            } catch (Exception e) {
-                System.out.println("error" + e);
-            }
-            try {
-                Connection con = Database.connect();
-
-                String sql = "SELECT sem4_pl FROM tbl_main WHERE username='" + Login.username + "'";
-
-                System.out.println(sql);
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-
-                if (rs.next()) {
-                    int id = rs.getInt("sem4_pl");
-                    String s = String.valueOf(id);
-                    sem1t4.setText(s);
-                }
-            } catch (Exception e) {
-                System.out.println("error" + e);
-            }
-            try {
-                Connection con = Database.connect();
-
-                String sql = "SELECT sem5_pl FROM tbl_main WHERE username='" + Login.username + "'";
-
-                System.out.println(sql);
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-
-                if (rs.next()) {
-                    int id = rs.getInt("sem5_pl");
-                    String s = String.valueOf(id);
-                    sem1t5.setText(s);
-                }
-            } catch (Exception e) {
-                System.out.println("error" + e);
-            }
-        } else {
-            try {
-                Connection con = Database.connect();
-
-                String sql = "SELECT sem1_p FROM tbl_main WHERE username='" + Login.username + "'";
-
-                System.out.println(sql);
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-
-                if (rs.next()) {
-                    int id = rs.getInt("sem1_p");
-                    String s = String.valueOf(id);
-                    sem1t1.setText(s);
-                }
-            } catch (Exception e) {
-                System.out.println("error" + e);
-            }
-
-            try {
-                Connection con = Database.connect();
-
-                String sql = "SELECT sem2_p FROM tbl_main WHERE username='" + Login.username + "'";
-
-                System.out.println(sql);
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-
-                if (rs.next()) {
-                    int id = rs.getInt("sem2_p");
-                    String s = String.valueOf(id);
-                    sem1t2.setText(s);
-                }
-            } catch (Exception e) {
-                System.out.println("error" + e);
-            }
-
-            try {
-                Connection con = Database.connect();
-
-                String sql = "SELECT sem3_p FROM tbl_main WHERE username='" + Login.username + "'";
-
-                System.out.println(sql);
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-
-                if (rs.next()) {
-                    int id = rs.getInt("sem3_p");
-                    String s = String.valueOf(id);
-                    sem1t3.setText(s);
-                }
-            } catch (Exception e) {
-                System.out.println("error" + e);
-            }
-            try {
-                Connection con = Database.connect();
-
-                String sql = "SELECT sem4_p FROM tbl_main WHERE username='" + Login.username + "'";
-
-                System.out.println(sql);
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-
-                if (rs.next()) {
-                    int id = rs.getInt("sem4_p");
-                    String s = String.valueOf(id);
-                    sem1t4.setText(s);
-                }
-            } catch (Exception e) {
-                System.out.println("error" + e);
-            }
-
-            try {
-                Connection con = Database.connect();
-
-                String sql = "SELECT sem5_p FROM tbl_main WHERE username='" + Login.username + "'";
-
-                System.out.println(sql);
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-
-                if (rs.next()) {
-                    int id = rs.getInt("sem5_p");
-                    String s = String.valueOf(id);
-                    sem1t5.setText(s);
-                }
-            } catch (Exception e) {
-                System.out.println("error" + e);
-            }
-        }
     }
 
     /**
@@ -724,11 +613,7 @@ public class sem6 extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        if (mc1.getText().isEmpty() || cn1.getText().isEmpty() || sdp1.getText().isEmpty() || mcl1.getText().isEmpty() || sdpl1.getText().isEmpty() || ps1.getText().isEmpty() || st1.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please Fill Grades correctly");
-        } else {
-            if (value == 1) {
-                String mcH, cnH, sdpH, sdplH, mplH, mclH, stH, psH, sem1t3H, sem1t4H, sem1t5H;
+              String mcH, cnH, sdpH, sdplH, mplH, mclH, stH, psH, sem1t3H, sem1t4H, sem1t5H;
                 float average;
                 float totalmark;
                 float totalmark2;
@@ -762,10 +647,17 @@ public class sem6 extends javax.swing.JFrame {
                 float sem1t3grade = Float.parseFloat(sem1t3H);
                 float sem1t4grade = Float.parseFloat(sem1t4H);
                 float sem1t5grade = Float.parseFloat(sem1t5H);
-                totalmark = ((mcgrade * 5) + (cngrade * 4) + (sdpgrade * 5) + (sdplgrade * 3) + (psgrade * 10) + (stgrade * 5) + (mclgrade * 3));
-
-                cgpa = (((mcgrade * 5) + (cngrade * 4) + (sdpgrade * 5) + (sdplgrade * 3) + (psgrade * 10) + (stgrade * 5) + (mclgrade * 3)) / 35);
+                 totalmark = ((mcgrade * 5) + (cngrade * 4) + (sdpgrade * 5) + (sdplgrade * 3) + (psgrade * 10) + (stgrade * 5) + (mclgrade * 3));
+                 cgpa = (((mcgrade * 5) + (cngrade * 4) + (sdpgrade * 5) + (sdplgrade * 3) + (psgrade * 10) + (stgrade * 5) + (mclgrade * 3)) / 35);
                 percentage = (cgpa * 9.5);
+        if (mc1.getText().isEmpty() || cn1.getText().isEmpty() || sdp1.getText().isEmpty() || mcl1.getText().isEmpty() || sdpl1.getText().isEmpty() || ps1.getText().isEmpty() || st1.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please Fill Grades correctly");
+        } else {
+            if (value == 1) {
+          
+               
+
+              
                 totalmark2 = (totalmark + sem1t3grade + sem1t4grade + sem1t5grade);
                 cgpa2 = (totalmark2 / 120);
                 double rounded = Math.round(cgpa2 * 100) / 100.0;
@@ -777,23 +669,13 @@ public class sem6 extends javax.swing.JFrame {
                 percentage1.setText(rounded2 + "");
 
                 perc.setVisible(false);
-                try {
-                    Connection con = Database.connect();
-
-                    String sql = "UPDATE tbl_main SET tot_cgpal=('" + cgpA + "') WHERE username='" + Login.username + "'";
-                    System.out.println(sql);
-                    Statement stmt = con.createStatement();
-                    int rs = stmt.executeUpdate(sql);
-
-                } catch (Exception e) {
-                    System.out.println("error" + e);
-                }
+                
                 String sem1tot = total.getText();
                 System.out.println(sem1tot);
                 try {
                     Connection con = Database.connect();
 
-                    String sql = "UPDATE tbl_main SET sem6_pl=('" + sem1tot + "') WHERE username='" + Login.username + "'";
+                    String sql = "UPDATE tbl_main SET tot_cgpal=('" + cgpA + "'),sem6_pl=('" + sem1tot + "'),tot_pl = sem3_pl+sem4_pl+sem5_pl+sem6_pl WHERE username='" + Login.username + "'";
                     System.out.println(sql);
                     Statement stmt = con.createStatement();
                     int rs = stmt.executeUpdate(sql);
@@ -801,65 +683,23 @@ public class sem6 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     System.out.println("error" + e);
                 }
-                int j = (int) cgpa2;
-
-                progress.setValue(j);
-
-                progress.setValue(j);
-
-                try {
-                    Connection con = Database.connect();
-
-                    String sql = "UPDATE tbl_main SET tot_pl = sem3_pl+sem4_pl+sem5_pl+sem6_pl where username='" + Login.username + "'";
-                    System.out.println(sql);
-                    Statement stmt = con.createStatement();
-                    int rs = stmt.executeUpdate(sql);
-
-                } catch (Exception e) {
-                    System.out.println("error" + e);
-                }
+         
             } else {
-                String mcH, cnH, sdpH, sdplH, mplH, mclH, sem1tH, stH, psH, sem1t2H, sem1t3H, sem1t4H, sem1t5H;
-                float average;
-                float totalmark;
-                float totalmark2;
-                double percentage;
-                float cgpa;
-                float cgpa2;
-
-                mcH = mc.getText();
-                cnH = cn.getText();
-                sdpH = sdp.getText();
-
-                sdplH = sdpl.getText();
-                psH = ps.getText();
-
-                stH = st.getText();
-                mclH = mcl.getText();
+                String sem1tH,sem1t2H;
+            
                 sem1t2H = sem1t2.getText();
-                sem1t3H = sem1t3.getText();
-                sem1t4H = sem1t4.getText();
-                sem1t5H = sem1t5.getText();
+              
                 sem1tH = sem1t1.getText();
 
-                float mcgrade = Float.parseFloat(mcH);
-                float cngrade = Float.parseFloat(cnH);
-                float sdpgrade = Float.parseFloat(sdpH);
-
-                float sdplgrade = Float.parseFloat(sdplH);
-                float psgrade = Float.parseFloat(psH);
-                float stgrade = Float.parseFloat(stH);
-                float mclgrade = Float.parseFloat(mclH);
+           
+          
 
                 float sem1tgrade = Float.parseFloat(sem1tH);
                 float sem1t2grade = Float.parseFloat(sem1t2H);
-                float sem1t3grade = Float.parseFloat(sem1t3H);
-                float sem1t4grade = Float.parseFloat(sem1t4H);
-                float sem1t5grade = Float.parseFloat(sem1t5H);
-                totalmark = ((mcgrade * 5) + (cngrade * 4) + (sdpgrade * 5) + (sdplgrade * 3) + (psgrade * 10) + (stgrade * 5) + (mclgrade * 3));
+       
+                
 
-                cgpa = (((mcgrade * 5) + (cngrade * 4) + (sdpgrade * 5) + (sdplgrade * 3) + (psgrade * 10) + (stgrade * 5) + (mclgrade * 3)) / 35);
-                percentage = (cgpa * 9.5);
+                
                 totalmark2 = (sem1tgrade + totalmark + sem1t2grade + sem1t3grade + sem1t4grade + sem1t5grade);
                 cgpa2 = (totalmark2 / 175);
                 double rounded = Math.round(cgpa2 * 100) / 100.0;
@@ -877,34 +717,14 @@ public class sem6 extends javax.swing.JFrame {
 
                 String sem1tot = total.getText();
                 System.out.println(sem1tot);
-                try {
-                    Connection con = Database.connect();
-
-                    String sql = "UPDATE tbl_main SET sem6_p=('" + sem1tot + "') WHERE username='" + Login.username + "'";
-                    System.out.println(sql);
-                    Statement stmt = con.createStatement();
-                    int rs = stmt.executeUpdate(sql);
-
-                } catch (Exception e) {
-                    System.out.println("error" + e);
-                }
-                try {
-                    Connection con = Database.connect();
-
-                    String sql = "UPDATE tbl_main SET tot_p = sem1_p+sem2_p+sem3_p+sem4_p+sem5_p+sem6_p where username='" + Login.username + "'";
-                    System.out.println(sql);
-                    Statement stmt = con.createStatement();
-                    int rs = stmt.executeUpdate(sql);
-
-                } catch (Exception e) {
-                    System.out.println("error" + e);
-                }
+                
+                
                 String cgpA = Cgpa.getText();
                 System.out.println(cgpA);
                 try {
                     Connection con = Database.connect();
 
-                    String sql = "UPDATE tbl_main SET tot_cgpal=('" + cgpA + "') WHERE username='" + Login.username + "'";
+                    String sql = "UPDATE tbl_main SET tot_cgpal=('" + cgpA + "'),sem6_p=('" + sem1tot + "'),tot_p = sem1_p+sem2_p+sem3_p+sem4_p+sem5_p+sem6_p WHERE username='" + Login.username + "'";
                     System.out.println(sql);
                     Statement stmt = con.createStatement();
                     int rs = stmt.executeUpdate(sql);
@@ -1007,194 +827,44 @@ public class sem6 extends javax.swing.JFrame {
 
     private void mc1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mc1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = mc1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            mc.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            mc.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            mc.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            mc.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            mc.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            mc.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            mc.setText("0");
-        } else {
-
-        }
-        cn1.requestFocusInWindow();
+        String grade = mc1.getText();
+        int score = GradeConverter.convert(grade);
+        mc.setText(Integer.toString(score));
     }//GEN-LAST:event_mc1KeyReleased
 
     private void cn1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cn1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = cn1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            cn.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            cn.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            cn.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            cn.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            cn.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            cn.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            cn.setText("0");
-        } else {
-
-        }
-        sdp1.requestFocusInWindow();
+        String grade = cn1.getText();
+        int score = GradeConverter.convert(grade);
+        cn.setText(Integer.toString(score));
     }//GEN-LAST:event_cn1KeyReleased
 
     private void sdp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sdp1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = sdp1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            sdp.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            sdp.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            sdp.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            sdp.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            sdp.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            sdp.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            sdp.setText("0");
-        } else {
-
-        }
-        mcl1.requestFocusInWindow();
+        String grade = sdp1.getText();
+        int score = GradeConverter.convert(grade);
+        sdp.setText(Integer.toString(score));
     }//GEN-LAST:event_sdp1KeyReleased
 
     private void mcl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mcl1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = mcl1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            mcl.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            mcl.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            mcl.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            mcl.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            mcl.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            mcl.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            mcl.setText("0");
-        } else {
-
-        }
-        sdpl1.requestFocusInWindow();
+        String grade = mcl1.getText();
+        int score = GradeConverter.convert(grade);
+        mcl.setText(Integer.toString(score));
     }//GEN-LAST:event_mcl1KeyReleased
 
     private void sdpl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sdpl1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = sdpl1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            sdpl.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            sdpl.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            sdpl.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            sdpl.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            sdpl.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            sdpl.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            sdpl.setText("0");
-        } else {
-
-        }
-        ps1.requestFocusInWindow();
+        String grade = sdpl1.getText();
+        int score = GradeConverter.convert(grade);
+        sdpl.setText(Integer.toString(score));
     }//GEN-LAST:event_sdpl1KeyReleased
 
     private void ps1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ps1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = ps1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            ps.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            ps.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            ps.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            ps.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            ps.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            ps.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            ps.setText("0");
-        } else {
-
-        }
-        st1.requestFocusInWindow();
+        String grade = ps1.getText();
+        int score = GradeConverter.convert(grade);
+        ps.setText(Integer.toString(score));
     }//GEN-LAST:event_ps1KeyReleased
 
     private void st1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_st1FocusLost
@@ -1207,34 +877,9 @@ public class sem6 extends javax.swing.JFrame {
 
     private void st1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_st1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = st1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            st.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            st.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            st.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            st.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            st.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            st.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            st.setText("0");
-        } else {
-
-        }
-        jToggleButton1.requestFocusInWindow();
+        String grade = st1.getText();
+        int score = GradeConverter.convert(grade);
+        st.setText(Integer.toString(score));
     }//GEN-LAST:event_st1KeyReleased
 
     private void stActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stActionPerformed
@@ -1329,4 +974,13 @@ public class sem6 extends javax.swing.JFrame {
     private javax.swing.JTextField st1;
     private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
+
+    private void setSemesterGrade(String sem3_pl, JTextField sem1t31) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setSemesterGrades() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

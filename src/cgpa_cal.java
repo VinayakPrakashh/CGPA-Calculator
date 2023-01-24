@@ -621,88 +621,23 @@ public class cgpa_cal extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT tot_p FROM tbl_main where id = 1";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
+  checkconn.checkConnection();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
+       checkconn.checkConnection();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
 
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT tot_p FROM tbl_main where id = 1";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
+   checkconn.checkConnection();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
+     checkconn.checkConnection();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed

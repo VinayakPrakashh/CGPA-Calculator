@@ -1,9 +1,16 @@
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+     import javazoom.jl.player.Player;
+import java.io.FileInputStream;
+
 
 
 /*
@@ -25,6 +32,19 @@ public class registration extends javax.swing.JFrame {
     public registration() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        Thread thread = new Thread(new Runnable() {
+    public void run() {
+        try {
+            FileInputStream fis = new FileInputStream("song.mp3");
+            Player playMP3 = new Player(fis);
+            playMP3.play();
+        } catch (Exception e) {
+            System.out.println("Problem playing file song.mp3");
+            System.out.println(e);
+        }
+    }
+});
+thread.start();
 
     }
 
@@ -207,45 +227,26 @@ public class registration extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        dispose();
+  int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
+if (confirm == JOptionPane.YES_OPTION) {
+    System.exit(0);
+}
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        try {
-            Connection con = Database.connect();
-            String sql = "SELECT * FROM tbl_main";
-
-            System.out.println(sql);
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            } else {
-
-            }
-        } catch (Exception e) {
-
-        }
+    
+       checkconn.checkConnection();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        try {
-            Connection con = Database.connect();
-            String sql = "SELECT * FROM tbl_main";
+   
 
-            System.out.println(sql);
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+  
+    
 
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Database Not Connected");
-        }
+       checkconn.checkConnection();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void unameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameActionPerformed

@@ -985,40 +985,9 @@ public class sem2_1 extends javax.swing.JFrame {
 
     private void ec2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ec2SKeyReleased
         // TODO add your handling code here:
-                                              String i;
-        i=ec2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          ec2.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-         ec2.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-          ec2.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-          ec2.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-          ec2.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-          ec2.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-         ec2.setText("0");
-        }else{
-                                    
-                               }
-    
+  String grade = ec2S.getText();
+int score = GradeConverter.convert(grade);
+ec2.setText(Integer.toString(score));
     }//GEN-LAST:event_ec2SKeyReleased
 
     private void em2SFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_em2SFocusGained
@@ -1027,345 +996,65 @@ public class sem2_1 extends javax.swing.JFrame {
 
     private void em2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_em2SKeyReleased
         // TODO add your handling code here:
-                                                  String i;
-        i=em2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          em2.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-           em2.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-         em2.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          em2.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-        em2.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-          em2.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          em2.setText("0");
-        }else{
-                                    
-                               }
-      
+    String grade = em2S.getText();
+int score = GradeConverter.convert(grade);
+em2.setText(Integer.toString(score));
     }//GEN-LAST:event_em2SKeyReleased
 
     private void ep2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ep2SKeyReleased
         // TODO add your handling code here:
-                                                String i;
-        i=ep2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          ep2.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-         ep2.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-         ep2.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-         ep2.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-         ep2.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-           ep2.setText("5");
-        }
-                             else if("F".equals(i)||"f".equals(i)){
-          
-         ep2.setText("0");
-        }else{
-                                    
-                               }
- 
+   String grade = ep2S.getText();
+int score = GradeConverter.convert(grade);
+ep2.setText(Integer.toString(score));
     }//GEN-LAST:event_ep2SKeyReleased
 
     private void ech2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ech2SKeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=ech2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          ech2.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-          ech2.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-          ech2.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          ech2.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          ech2.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-         ech2.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ech2.setText("0");
-        }else{
-                                
-                               }
-        
+    String grade = ech2S.getText();
+int score = GradeConverter.convert(grade);
+ech2.setText(Integer.toString(score));
     }//GEN-LAST:event_ech2SKeyReleased
 
     private void pcSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pcSKeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=pcS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-         pc.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-          pc.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-          pc.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          pc.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          pc.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-          pc.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          pc.setText("0");
-        }else{
-                                    
-                               }
-       
+     String grade = pcS.getText();
+int score = GradeConverter.convert(grade);
+pc.setText(Integer.toString(score));
     }//GEN-LAST:event_pcSKeyReleased
 
     private void egSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_egSKeyReleased
         // TODO add your handling code here:
-                                               String i;
-        i=egS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-          eg.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-           eg.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-          eg.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          eg.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          eg.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-          eg.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-         eg.setText("0");
-        }else{
-                                    
-                               }
-        
+      String grade = egS.getText();
+int score = GradeConverter.convert(grade);
+eg.setText(Integer.toString(score));
     }//GEN-LAST:event_egSKeyReleased
 
     private void wpSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_wpSKeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=wpS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           wp.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-          wp.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-         wp.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-          wp.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          wp.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-          wp.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-         wp.setText("0");
-        }else{
-                                    
-                               }
-        
+   String grade = wpS.getText();
+int score = GradeConverter.convert(grade);
+wp.setText(Integer.toString(score));
     }//GEN-LAST:event_wpSKeyReleased
 
     private void esl2SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_esl2SKeyReleased
         // TODO add your handling code here:
-                                                String i;
-        i=esl2S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           esl2.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-          esl2.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-           esl2.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-           esl2.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-          esl2.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-           esl2.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          esl2.setText("0");
-        }else{
-                                    
-                               }
-       
+      String grade = esl2S.getText();
+int score = GradeConverter.convert(grade);
+esl2.setText(Integer.toString(score));
     }//GEN-LAST:event_esl2SKeyReleased
 
     private void pclSEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pclSEKeyReleased
         // TODO add your handling code here:
-                                                 String i;
-        i=pclSE.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           pcl.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-           pcl.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-           pcl.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-           pcl.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-           pcl.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)){
-            
-           pcl.setText("5");
-        }
-                              else if("F".equals(i)||"f".equals(i)){
-          
-           pcl.setText("0");
-        }else{
-                                    
-                               }
-      
+       String grade = pclSE.getText();
+int score = GradeConverter.convert(grade);
+pcl.setText(Integer.toString(score));
     }//GEN-LAST:event_pclSEKeyReleased
 
     private void lsSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lsSKeyReleased
         // TODO add your handling code here:
-                                                String i;
-        i=lsS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           ls.setText("10");
-        }
-     else if("A".equals(i)||"a".equals(i)){
-            
-           ls.setText("9");
-        }
-              else if("B".equals(i)||"b".equals(i)){
-            
-           ls.setText("8");
-        }
-                  else if("C".equals(i) ||"c".equals(i)){
-            
-           ls.setText("7");
-        }
-                      else if("D".equals(i)||"d".equals(i)){
-            
-           ls.setText("6");
-        }
-                          else if("E".equals(i)||"e".equals(i)||"e".equals(i)){
-            
-           ls.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ls.setText("0");
-        }else{
-                                    
-                               }
-      
-        
+     String grade = lsS.getText();
+int score = GradeConverter.convert(grade);
+ls.setText(Integer.toString(score));
     }//GEN-LAST:event_lsSKeyReleased
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked

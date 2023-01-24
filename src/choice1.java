@@ -169,44 +169,12 @@ public class choice1 extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
         
-            try{
-             Connection con=Database.connect();
-            String sql="SELECT tot_p FROM tbl_main where id = 1";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-    JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-             
-        }
+        checkconn.checkConnection();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-         try{
-           Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-            
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            if(rs.next())
-            {
-  JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-           
-        }
+      checkconn.checkConnection();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void cpgaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cpgaMouseClicked

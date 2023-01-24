@@ -62,7 +62,7 @@ public class sgpa_sem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sem3);
-        sem3.setBounds(900, 140, 280, 127);
+        sem3.setBounds(900, 190, 280, 127);
 
         sem2.setBackground(new java.awt.Color(0, 0, 0));
         sem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM2 - Copy.png"))); // NOI18N
@@ -72,7 +72,7 @@ public class sgpa_sem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sem2);
-        sem2.setBounds(560, 140, 280, 127);
+        sem2.setBounds(560, 190, 280, 127);
 
         sem6.setBackground(new java.awt.Color(0, 0, 0));
         sem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM6 - Copy.png"))); // NOI18N
@@ -82,7 +82,7 @@ public class sgpa_sem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sem6);
-        sem6.setBounds(890, 370, 280, 127);
+        sem6.setBounds(890, 420, 280, 127);
 
         sem4.setBackground(new java.awt.Color(0, 0, 0));
         sem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM4 - Copy.png"))); // NOI18N
@@ -92,7 +92,7 @@ public class sgpa_sem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sem4);
-        sem4.setBounds(210, 370, 280, 127);
+        sem4.setBounds(210, 420, 280, 127);
 
         sem1.setBackground(new java.awt.Color(0, 0, 0));
         sem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM1 - Copy.png"))); // NOI18N
@@ -105,7 +105,7 @@ public class sgpa_sem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sem1);
-        sem1.setBounds(220, 140, 280, 127);
+        sem1.setBounds(220, 190, 280, 127);
 
         sem5.setBackground(new java.awt.Color(0, 0, 0));
         sem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ISEM5 - Copy.png"))); // NOI18N
@@ -115,7 +115,7 @@ public class sgpa_sem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(sem5);
-        sem5.setBounds(560, 370, 280, 127);
+        sem5.setBounds(560, 420, 280, 127);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,44 +253,12 @@ public class sgpa_sem extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
 
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT tot_p FROM tbl_main where id = 1";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
+        checkconn.checkConnection();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-
-        }
+        checkconn.checkConnection();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed

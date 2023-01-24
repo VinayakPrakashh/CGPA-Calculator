@@ -8,23 +8,22 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author ACER
  */
 public class sem1 extends javax.swing.JFrame {
- String tmark;
+
+    String tmark;
 
     /**
      * Creates new form sem1
      */
     public sem1() {
         initComponents();
-      perc.setVisible(false);
+        perc.setVisible(false);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-      
-      
+
     }
 
     /**
@@ -413,13 +412,13 @@ public class sem1 extends javax.swing.JFrame {
 
     private void ec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ec1ActionPerformed
         // TODO add your handling code here:
- 
-        
+
+
     }//GEN-LAST:event_ec1ActionPerformed
 
     private void ep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ep1ActionPerformed
         // TODO add your handling code here:
-   
+
     }//GEN-LAST:event_ep1ActionPerformed
 
     private void ech1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ech1ActionPerformed
@@ -436,117 +435,85 @@ public class sem1 extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-         if(ec1.getText().isEmpty()||em1.getText().isEmpty()||ep1.getText().isEmpty()||ech1.getText().isEmpty()||hpe.getText().isEmpty()||cf.getText().isEmpty()){
+        if (ec1.getText().isEmpty() || em1.getText().isEmpty() || ep1.getText().isEmpty() || ech1.getText().isEmpty() || hpe.getText().isEmpty() || cf.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Fill Grades correctly");
-      }
-      else{
-        
+        } else {
+
             String ec1H, em1H, ep1H, ech1H, hpeH, cfH;
-  
-       float totalmark;
-       double percentage;
-        double cgpa;
-        
-        ec1H = ec1.getText();
-        em1H = em1.getText();
-        ep1H = ep1.getText();
-        ech1H = ech1.getText();
-     
-        hpeH = hpe.getText();
-      
-        cfH = cf.getText();
-    
-        
-        float ecgrade =Float.parseFloat(ec1H);
-        float emgrade = Float.parseFloat(em1H);
-        float epgrade = Float.parseFloat(ep1H);
-        float echgrade = Float.parseFloat(ech1H);
-      
-        float hpegrade = Float.parseFloat(hpeH);
-     
-        float cfgrade = Float.parseFloat(cfH);
-  
-        totalmark = ((ecgrade*3) + (emgrade*6) + (epgrade*3) + (echgrade*3) + (hpegrade*2) + (cfgrade*4));
-       
-        cgpa = (((ecgrade*3) + (emgrade*6) + (epgrade*3) + (echgrade*3) + (hpegrade*2) + (cfgrade*4)) / 21);
-         percentage = (cgpa*9.5);
-  double rounded = Math.round(cgpa*100)/100.0;
- 
-        Cgpa.setText(rounded+"");
-     
-        total.setText(totalmark+"");
-        tmark=Float.toString(totalmark);
-         double rounded2 = Math.round(percentage*100)/100.0;
-        percentage1.setText(rounded2+"");
-          String cgpA = Cgpa.getText();
-        System.out.println(cgpA);
-    try{
-                Connection con=Database.connect();
-                String sql="UPDATE tbl_main SET tot_cgpa=('"+cgpA+"') WHERE username='"+Login.username+"'";
+
+            float totalmark;
+            double percentage;
+            double cgpa;
+
+            ec1H = ec1.getText();
+            em1H = em1.getText();
+            ep1H = ep1.getText();
+            ech1H = ech1.getText();
+
+            hpeH = hpe.getText();
+
+            cfH = cf.getText();
+
+            float ecgrade = Float.parseFloat(ec1H);
+            float emgrade = Float.parseFloat(em1H);
+            float epgrade = Float.parseFloat(ep1H);
+            float echgrade = Float.parseFloat(ech1H);
+
+            float hpegrade = Float.parseFloat(hpeH);
+
+            float cfgrade = Float.parseFloat(cfH);
+
+            totalmark = ((ecgrade * 3) + (emgrade * 6) + (epgrade * 3) + (echgrade * 3) + (hpegrade * 2) + (cfgrade * 4));
+
+            cgpa = (((ecgrade * 3) + (emgrade * 6) + (epgrade * 3) + (echgrade * 3) + (hpegrade * 2) + (cfgrade * 4)) / 21);
+            percentage = (cgpa * 9.5);
+            double rounded = Math.round(cgpa * 100) / 100.0;
+
+            Cgpa.setText(rounded + "");
+
+            total.setText(totalmark + "");
+            tmark = Float.toString(totalmark);
+            double rounded2 = Math.round(percentage * 100) / 100.0;
+            percentage1.setText(rounded2 + "");
+            String cgpA = Cgpa.getText();
+            System.out.println(cgpA);
+           
+            perc.setVisible(true);
+            int i = (int) cgpa;
+
+            for (i = 1; i <= 10; i++) {
+                progress.setValue((int) cgpa);
+            }
+            String sem1tot = total.getText();
+            System.out.println(sem1tot);
+             try {
+                Connection con = Database.connect();
+                String sql = "UPDATE tbl_main SET tot_cgpa=('" + cgpA + "'),sem1_p=('" + sem1tot + "'),tot_p = sem1_p WHERE username='" + Login.username + "'";
                 System.out.println(sql);
-                Statement stmt=con.createStatement();
+                Statement stmt = con.createStatement();
                 int rs = stmt.executeUpdate(sql);
 
-            }
-            catch(Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("error" + e);
             }
-        
+
       
-        perc.setVisible(true);
-        int i = (int) cgpa;
-     
-        for(i=1;i<=10;i++){
-        progress.setValue((int) cgpa);
         }
-           String sem1tot = total.getText();
-        System.out.println(sem1tot);
-         try{
-                 Connection con=Database.connect();
-          
-                 String sql="UPDATE tbl_main SET sem1_p=('"+sem1tot+"') WHERE username='"+Login.username+"'";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
-
-            }
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-         
-
-
-
- try{
-              Connection con=Database.connect();
-                String sql="UPDATE tbl_main SET tot_p = sem1_p where username='"+Login.username+"'";
-                System.out.println(sql);
-                Statement stmt=con.createStatement();
-                int rs = stmt.executeUpdate(sql);
-
-            }
-            catch(Exception e)
-            {
-                System.out.println("error" + e);
-            }
-         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
-           dashboard p=new dashboard();
+        dashboard p = new dashboard();
         p.setVisible(true);
-          dispose();
-          
+        dispose();
+
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
-             sem2 p=new sem2();
+        sem2 p = new sem2();
         p.setVisible(true);
-          dispose();
+        dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void ec1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ec1MouseExited
@@ -560,12 +527,12 @@ public class sem1 extends javax.swing.JFrame {
 
     private void ec1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ec1FocusLost
         // TODO add your handling code here:
-  
+
     }//GEN-LAST:event_ec1FocusLost
 
     private void cfSFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cfSFocusLost
         // TODO add your handling code here:
-    
+
     }//GEN-LAST:event_cfSFocusLost
 
     private void cfSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cfSActionPerformed
@@ -574,7 +541,7 @@ public class sem1 extends javax.swing.JFrame {
 
     private void ep1SFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ep1SFocusLost
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_ep1SFocusLost
 
     private void ep1SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ep1SActionPerformed
@@ -583,7 +550,7 @@ public class sem1 extends javax.swing.JFrame {
 
     private void ech1SFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ech1SFocusLost
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_ech1SFocusLost
 
     private void ech1SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ech1SActionPerformed
@@ -592,7 +559,7 @@ public class sem1 extends javax.swing.JFrame {
 
     private void hpeSFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_hpeSFocusLost
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_hpeSFocusLost
 
     private void hpeSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hpeSActionPerformed
@@ -601,232 +568,49 @@ public class sem1 extends javax.swing.JFrame {
 
     private void ec1SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ec1SKeyReleased
         // TODO add your handling code here:
-                                               String i;
-        i=ec1S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           ec1.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           ec1.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           ec1.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           ec1.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)||"d".equals(i)){
-            
-           ec1.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           ec1.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ec1.setText("0");
-           
-        }else{
-                                    
-                               }
-                              
+        String grade = ec1S.getText();
+        int score = GradeConverter.convert(grade);
+        ec1.setText(Integer.toString(score));
+
     }//GEN-LAST:event_ec1SKeyReleased
 
     private void em1SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_em1SKeyReleased
         // TODO add your handling code here:
-                                               String i;
-        i=em1S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           em1.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           em1.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           em1.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           em1.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           em1.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)||"e".equals(i)){
-            
-           em1.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           em1.setText("0");
-        }
-       
-                              
+
+        String grade = em1S.getText();
+        int score = GradeConverter.convert(grade);
+        em1.setText(Integer.toString(score));
     }//GEN-LAST:event_em1SKeyReleased
 
     private void ep1SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ep1SKeyReleased
         // TODO add your handling code here:
-                                                      String i;
-        i=ep1S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           ep1.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           ep1.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           ep1.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           ep1.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           ep1.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)||"e".equals(i)){
-            
-           ep1.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ep1.setText("0");
-        }else{
-                                    
-                               }
+        String grade = ep1S.getText();
+        int score = GradeConverter.convert(grade);
+        ep1.setText(Integer.toString(score));
     }//GEN-LAST:event_ep1SKeyReleased
 
     private void ech1SKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ech1SKeyReleased
         // TODO add your handling code here:
-                                                     String i;
-        i=ech1S.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           ech1.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           ech1.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           ech1.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           ech1.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           ech1.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)||"e".equals(i)){
-            
-           ech1.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ech1.setText("0");
-        }else{
-                                    
-                               }
-                             
+        String grade = ech1S.getText();
+        int score = GradeConverter.convert(grade);
+        ech1.setText(Integer.toString(score));
+
     }//GEN-LAST:event_ech1SKeyReleased
 
     private void hpeSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hpeSKeyReleased
         // TODO add your handling code here:
-                                                      String i;
-        i=hpeS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-            
-           hpe.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           hpe.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           hpe.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           hpe.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-          hpe.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)||"e".equals(i)){
-            
-           hpe.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           hpe.setText("0");
-        }else{
-                                    
-                               }
-                               
+        String grade = hpeS.getText();
+        int score = GradeConverter.convert(grade);
+        hpe.setText(Integer.toString(score));
+
     }//GEN-LAST:event_hpeSKeyReleased
 
     private void cfSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cfSKeyReleased
         // TODO add your handling code here:
-                                                       String i;
-        i=cfS.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-            
-           cf.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           cf.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           cf.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           cf.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           cf.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           cf.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           cf.setText("0");
-        }
-                               else{
-                                    
-                               }
-                                  
-                  
-                                 
+        String grade = cfS.getText();
+        int score = GradeConverter.convert(grade);
+        cf.setText(Integer.toString(score));
+
     }//GEN-LAST:event_cfSKeyReleased
 
     private void ec1SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ec1SActionPerformed

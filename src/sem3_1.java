@@ -690,306 +690,58 @@ int value;
 
     private void dcp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dcp1KeyReleased
         // TODO add your handling code here:
-                                                  String i;
-        i=dcp1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           dcp.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           dcp.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-          dcp.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-          dcp.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-          dcp.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           dcp.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          dcp.setText("0");
-        }else{
-                                    
-                               }
-    
+     String grade = dcp1.getText();
+int score = GradeConverter.convert(grade);
+dcp.setText(Integer.toString(score));
     }//GEN-LAST:event_dcp1KeyReleased
 
     private void oop1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_oop1KeyReleased
         // TODO add your handling code here:
-                                                    String i;
-        i=oop1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           oop.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           oop.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           oop.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-          oop.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-          oop.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-          oop.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          oop.setText("0");
-        }else{
-                                    
-                               }
-    
+       String grade = oop1.getText();
+int score = GradeConverter.convert(grade);
+oop.setText(Integer.toString(score));
     }//GEN-LAST:event_oop1KeyReleased
 
     private void ca1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ca1KeyReleased
         // TODO add your handling code here:
-                                                     String i;
-        i=ca1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-         ca.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           ca.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           ca.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           ca.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           ca.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-          ca.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           ca.setText("0");
-        }else{
-                                    
-                               }
-       
+       String grade = ca1.getText();
+int score = GradeConverter.convert(grade);
+ca.setText(Integer.toString(score));
     }//GEN-LAST:event_ca1KeyReleased
 
     private void dbms1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dbms1KeyReleased
         // TODO add your handling code here:
-                                                   String i;
-        i=dbms1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           dbms.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           dbms.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-          dbms.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           dbms.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-          dbms.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           dbms.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-          dbms.setText("0");
-        }else{
-                                    
-                               }
-       
+      String grade = dbms1.getText();
+int score = GradeConverter.convert(grade);
+dbms.setText(Integer.toString(score));
     }//GEN-LAST:event_dbms1KeyReleased
 
     private void esdm1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_esdm1KeyReleased
         // TODO add your handling code here:
-                                                    String i;
-        i=esdm1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           esdm.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           esdm.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           esdm.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-          esdm.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-          esdm.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-          esdm.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           esdm.setText("0");
-        }else{
-                                    
-                               }
-      
+      String grade = esdm1.getText();
+int score = GradeConverter.convert(grade);
+esdm.setText(Integer.toString(score));
     }//GEN-LAST:event_esdm1KeyReleased
 
     private void dcpl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dcpl1KeyReleased
         // TODO add your handling code here:
-                                                     String i;
-        i=dcpl1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           dcpl.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-          dcpl.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-          dcpl.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-         dcpl.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-       dcpl.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-           dcpl.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           dcpl.setText("0");
-        }else{
-                                    
-                               }
-   
+    String grade = dcpl1.getText();
+int score = GradeConverter.convert(grade);
+dcpl.setText(Integer.toString(score));
     }//GEN-LAST:event_dcpl1KeyReleased
 
     private void oopl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_oopl1KeyReleased
         // TODO add your handling code here:
-                                                    String i;
-        i=oopl1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           oopl.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           oopl.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           oopl.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-           oopl.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-           oopl.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-         oopl.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-           oopl.setText("0");
-        }else{
-                                    
-                               }
-      
+       String grade =oopl1.getText();
+int score = GradeConverter.convert(grade);
+oopl.setText(Integer.toString(score));
     }//GEN-LAST:event_oopl1KeyReleased
 
     private void dbmsl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dbmsl1KeyReleased
         // TODO add your handling code here:
-                                                     String i;
-        i=dbmsl1.getText();
-        
-        if("S".equals(i) || "s".equals(i)){
-           
-           dbmsl.setText("10");
-        }
-      else if("A".equals(i)||"a".equals(i)){
-            
-           dbmsl.setText("9");
-        }
-               else if("B".equals(i)||"b".equals(i)){
-            
-           dbmsl.setText("8");
-        }
-                   else if("C".equals(i) ||"c".equals(i)){
-            
-         dbmsl.setText("7");
-        }
-                       else if("D".equals(i)||"d".equals(i)){
-            
-          dbmsl.setText("6");
-        }
-                           else if("E".equals(i)||"e".equals(i)){
-            
-          dbmsl.setText("5");
-        }
-                               else if("F".equals(i)||"f".equals(i)){
-          
-        dbmsl.setText("0");
-        }else{
-                                    
-                               }
-       
+     String grade = dbmsl1.getText();
+int score = GradeConverter.convert(grade);
+dbmsl.setText(Integer.toString(score));
     }//GEN-LAST:event_dbmsl1KeyReleased
 
     /**

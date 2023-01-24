@@ -585,193 +585,45 @@ public class sem6_1 extends javax.swing.JFrame {
 
     private void mc1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mc1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = mc1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            mc.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            mc.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            mc.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            mc.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            mc.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            mc.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            mc.setText("0");
-        } else {
-
-        }
-
+    String grade = mc1.getText();
+int score = GradeConverter.convert(grade);
+mc.setText(Integer.toString(score));
     }//GEN-LAST:event_mc1KeyReleased
 
     private void cn1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cn1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = cn1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            cn.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            cn.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            cn.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            cn.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            cn.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            cn.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            cn.setText("0");
-        } else {
-
-        }
+        String grade = cn1.getText();
+int score = GradeConverter.convert(grade);
+cn.setText(Integer.toString(score));
     }//GEN-LAST:event_cn1KeyReleased
 
     private void sdp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sdp1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = sdp1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            sdp.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            sdp.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            sdp.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            sdp.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            sdp.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            sdp.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            sdp.setText("0");
-        } else {
-
-        }
-
+        String grade =sdp1.getText();
+int score = GradeConverter.convert(grade);
+sdp.setText(Integer.toString(score));
     }//GEN-LAST:event_sdp1KeyReleased
 
     private void mcl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mcl1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = mcl1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            mcl.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            mcl.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            mcl.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            mcl.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            mcl.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            mcl.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            mcl.setText("0");
-        } else {
-
-        }
+       String grade = mcl1.getText();
+int score = GradeConverter.convert(grade);
+mcl.setText(Integer.toString(score));
 
     }//GEN-LAST:event_mcl1KeyReleased
 
     private void sdpl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sdpl1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = sdpl1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            sdpl.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            sdpl.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            sdpl.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            sdpl.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            sdpl.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            sdpl.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            sdpl.setText("0");
-        } else {
-
-        }
-
+         String grade = sdpl1.getText();
+int score = GradeConverter.convert(grade);
+sdpl.setText(Integer.toString(score));
     }//GEN-LAST:event_sdpl1KeyReleased
 
     private void ps1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ps1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = ps1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            ps.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            ps.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            ps.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            ps.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            ps.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            ps.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            ps.setText("0");
-        } else {
-
-        }
-
+        String grade = ps1.getText();
+int score = GradeConverter.convert(grade);
+ps.setText(Integer.toString(score));
     }//GEN-LAST:event_ps1KeyReleased
 
     private void st1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_st1FocusLost
@@ -784,34 +636,9 @@ public class sem6_1 extends javax.swing.JFrame {
 
     private void st1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_st1KeyReleased
         // TODO add your handling code here:
-        String i;
-        i = st1.getText();
-
-        if ("S".equals(i) || "s".equals(i)) {
-
-            st.setText("10");
-        } else if ("A".equals(i) || "a".equals(i)) {
-
-            st.setText("9");
-        } else if ("B".equals(i) || "b".equals(i)) {
-
-            st.setText("8");
-        } else if ("C".equals(i) || "c".equals(i)) {
-
-            st.setText("7");
-        } else if ("D".equals(i) || "d".equals(i)) {
-
-            st.setText("6");
-        } else if ("E".equals(i) || "e".equals(i)) {
-
-            st.setText("5");
-        } else if ("F".equals(i) || "f".equals(i)) {
-
-            st.setText("0");
-        } else {
-
-        }
-
+       String grade = st1.getText();
+int score = GradeConverter.convert(grade);
+st.setText(Integer.toString(score));
     }//GEN-LAST:event_st1KeyReleased
 
     private void stActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stActionPerformed

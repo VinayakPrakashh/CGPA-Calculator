@@ -39,6 +39,7 @@ int value;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         logout = new javax.swing.JButton();
         user = new javax.swing.JLabel();
         cpga = new javax.swing.JLabel();
@@ -53,6 +54,15 @@ int value;
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 708));
         jPanel1.setLayout(null);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pngwing.com (1).png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(1290, 570, 50, 50);
 
         logout.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         logout.setText("LOGOUT");
@@ -154,49 +164,21 @@ int value;
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        dispose();
+int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
+if (confirm == JOptionPane.YES_OPTION) {
+    System.exit(0);
+}
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        try{
-            Connection con=Database.connect();
-            String sql="SELECT tot_p FROM tbl_main where id = 1";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                  JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-         
-        }
+        checkconn.checkConnection();
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        try{
-             Connection con=Database.connect();
-            String sql="SELECT * FROM tbl_main";
-
-            System.out.println(sql);
-            Statement stmt=con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        }
-        catch(Exception e)
-        {
-          
-        }
+  checkconn.checkConnection();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
@@ -226,6 +208,14 @@ int value;
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_cpgaMouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+       
+                    JOptionPane.showMessageDialog(null, "Soon!!");
+     
+  
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -269,6 +259,7 @@ int value;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logout;

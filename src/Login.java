@@ -25,7 +25,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-   
+
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
     }
@@ -198,41 +198,13 @@ public class Login extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        try {
-            Connection con = Database.connect();
-            String sql = "SELECT * FROM tbl_main";
-
-            System.out.println(sql);
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            } else {
-
-            }
-        } catch (Exception e) {
-
-        }
+  checkconn.checkConnection();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
 
-        try {
-            Connection con = Database.connect();
-            String sql = "SELECT * FROM tbl_main";
-
-            System.out.println(sql);
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "Database Connected");
-            }
-        } catch (Exception e) {
-
-        }
+     checkconn.checkConnection();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void unameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameActionPerformed
@@ -240,12 +212,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_unameActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-LoadingScreen loadingScreen = new LoadingScreen();
-loadingScreen.setVisible(true);
+
         username = uname.getText();
         String password = pass.getText();
 
-   
         if (username.equals("") || password.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Fields cannot be empty");
         } else {
@@ -260,7 +230,6 @@ loadingScreen.setVisible(true);
                 ResultSet rs = stmt.executeQuery(sql);
 
                 if (rs.next()) {
-loadingScreen.dispose();
 
                     JOptionPane.showMessageDialog(null, "Login success");
 
@@ -269,7 +238,6 @@ loadingScreen.dispose();
                     dispose();
 
                 } else {
-loadingScreen.dispose();
 
                     JOptionPane.showMessageDialog(null, "Login failed");
                 }
@@ -294,17 +262,21 @@ loadingScreen.dispose();
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        dispose();
+int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
+if (confirm == JOptionPane.YES_OPTION) {
+    System.exit(0);
+}
+
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_loginMouseClicked
 
     private void loginMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseReleased
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_loginMouseReleased
 
     /**
